@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc575d54-786f-4866-a0f6-fe58908bb060" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/META-INF/ACMEDeliverySystem.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/BusinessReportUIController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/Run.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/SettingsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/SettingsManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/businessReportUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/settings/settingsUI.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="dc575d54-786f-4866-a0f6-fe58908bb060" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +111,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Truong-OCU &lt;diane.m.truong@eagles.oc.edu&gt;" />
         <option value="Diane" />
       </list>
     </option>
@@ -249,11 +241,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559766890862</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Added some of Business Settings UI&#10;- Added some of Business Report Creation UI&#10;&#10;Todo:&#10;- Add functionality to buttons and labels&#10;- Add FileChooser to Import Map">
+      <created>1559767772381</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559767772381</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
