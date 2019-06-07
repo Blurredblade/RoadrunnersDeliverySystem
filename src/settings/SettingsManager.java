@@ -25,7 +25,7 @@ public class SettingsManager {
     }
 
     // Show the Business Report Generation Screen
-    private void showBusinessReport(String sessionID) {
+    public void showBusinessReport() {
         try {
             FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("businessReportUI.fxml"));
             scene.setRoot(loadBusinessReport.load());

@@ -22,16 +22,17 @@
                 <Label text="Import Map:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 
                 <!-- TEXT FIELDS-->
-                <TextField fx:id="deliveryBase" text="5" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <TextField fx:id="deliveryBlockRate" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <TextField fx:id="bonusRate" text="3" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <TextField fx:id="bonusGracePeriod" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <TextField fx:id="address" text="???" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                <TextField fx:id="map" text="???" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="deliveryBaseField" text="5" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <TextField fx:id="deliveryBlockRateField" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="bonusRateField" text="3" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="bonusGracePeriodField" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <TextField fx:id="addressField" text="???" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="mapField" text="???" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 
                 <!-- BUTTONS -->
-                <Button fx:id="saveButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false"
-                        text="Save" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <Button fx:id="saveButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <Button fx:id="openButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Open File" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                <Button fx:id="generateButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Generate Business Report" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
                 <!-- UI Constraints -->
                 <rowConstraints>
