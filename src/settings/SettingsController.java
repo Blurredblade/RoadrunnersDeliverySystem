@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -23,32 +25,37 @@ public class SettingsController {
 
     @FXML private Button logoutButton;
     @FXML private Button saveButton;
-    @FXML private Button openButton;
+    @FXML private Button openFileButton;
     @FXML private Button generateButton;
+
+    // Test
+    @FXML private TabPane tabPane;
+    @FXML private Tab customerTab;
+    @FXML private BusinessReportUIController customerController;
+    @FXML private Tab settingsTab;
+    @FXML private SettingsController settingsController;
 
     FileChooser fileChooser = new FileChooser();
 
     public void initialize() {
-        // Save Changes Button
+        // Save Changes
         saveButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 saveChanges();
             }
         });
 
-        // Open File Button
-        openButton.setOnAction(new EventHandler<ActionEvent>() {
+        // Select and Open a File
+        openFileButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                 openFile();
             }
         });
 
-        // Generate Business Report Button
+        // Generate Business Report
         generateButton.setOnAction(new EventHandler<>() {
             @Override public void handle(ActionEvent e) {
-                System.out.print("Loading Business Report UI");
                 FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("businessReportUI.fxml"));
-
                 try {
                     Stage stage = new Stage();
                     stage.setTitle("ACME Delivery Service - Business Report UI");
