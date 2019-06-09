@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Business Settings UI -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="500.0" fx:controller="UI.SettingsController">
+    <StackPane>
+        <VBox >
+            <TabPane>
+                <tabs>
+                    <Tab fx:id="Customers" text="Customers" closable="false" />
+                    <Tab fx:id="Settings" text="Settings" closable="false"/>
+                </tabs>
+            </TabPane>
+
+            <VBox>
+                <StackPane>
+                    <!-- Title -->
+                    <Label text="System Settings"/>
+                </StackPane>
+
+                <GridPane vgap="5">
+                    <!-- LABELS -->
+                    <Label text="Base Price:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="Delivery Rate:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Label text="Bonus Rate:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <Label text="Grace Period:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <Label text="Business Address:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <Label text="Import Map:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+                    <!-- TEXT FIELDS-->
+                    <TextField fx:id="deliveryBaseField" text="" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <TextField fx:id="deliveryBlockRateField" text="" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <TextField fx:id="bonusRateField" text="" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <TextField fx:id="bonusGracePeriodField" text="" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    <TextField fx:id="addressField" text="" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    <TextField fx:id="mapField" text="???" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                    <!-- BUTTONS -->
+                    <Button fx:id="saveButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                    <Button fx:id="openFileButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Open File" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                    <Button fx:id="generateButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Generate Business Report" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+
+
+
+                    <!-- UI Constraints -->
+                    <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="30.0"/>
+                        <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="30.0"/>
+                    </rowConstraints>
+
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="300" minWidth="10.0" prefWidth="200.0"/>
+                    </columnConstraints>
+                </GridPane>
+
+                <StackPane>
+                    <!-- Log Out Button -->
+                    <Button fx:id="logoutButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Log Out" StackPane.alignment="CENTER_RIGHT"/>
+                </StackPane>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                </padding>
+            </VBox>
+        </VBox>
+    </StackPane>
+</StackPane>
