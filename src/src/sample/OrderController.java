@@ -1,14 +1,19 @@
-package sample;
+package src.sample;
 
+import DataManagement.DatabaseManager;
+import UI.SettingsManager;
 import javafx.application.Application;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import Models.CustomerOrder;
+import java.util.ArrayList;
 
 public class OrderController extends Application {
 
@@ -22,7 +27,7 @@ public class OrderController extends Application {
     @FXML private Button printRouteBtn;
     @FXML private Button recordTimesBtn;
     @FXML private Button cancelOrderBtn;
-
+    @FXML private TableView OrderTable;
 
     public void initSessionID(final LoginManager loginManager, String sessionID) {
 
@@ -52,6 +57,16 @@ public class OrderController extends Application {
             if (tabCount == 1) {
 
                 Tab ordersTab = new Tab("Orders");
+
+                DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
+
+                ArrayList<CustomerOrder> orders = q.getOrders();
+                OrderTable = new TableView();
+                TableColumn ordernumber = new TableColumn("Order Number");
+
+                for(CustomerOrder o:orders){
+
+                }
 
                 VBox orderTabVBox = new VBox();
                 orderTabVBox.getChildren().addAll(
@@ -147,6 +162,8 @@ public class OrderController extends Application {
                         new Button("Open File")
 
                 );
+
+                stage.setTitle("ACME Delivery Service - System Settings");
 
                 settingsTab.setContent(settingsTabVBox);
                 tabPane.getTabs().add(settingsTab);

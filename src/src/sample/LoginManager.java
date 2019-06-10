@@ -1,4 +1,4 @@
-package sample;
+package src.sample;
 
 import java.io.IOException;
 import java.util.logging.*;

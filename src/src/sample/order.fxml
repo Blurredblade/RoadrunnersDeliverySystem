@@ -28,7 +28,7 @@
                         </Label>
                         <Label layoutX="304.0" layoutY="62.0" text="Filter by Status:" />
                         <ChoiceBox layoutX="394.0" layoutY="58.0" prefWidth="150.0" />
-                        <TableView layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
+                        <TableView fx:id="OrderTable" layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
                             <columns>
                                 <TableColumn prefWidth="34.0" text="[]" />
                                 <TableColumn prefWidth="54.0" text="Order #" />
