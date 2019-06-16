@@ -1,4 +1,4 @@
-package UI;
+package UI.Business.Report;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -1,20 +1,18 @@
-package UI;
+package UI.Settings;
 
 
 import DataManagement.DatabaseManager;
 import Models.Business;
+import UI.Business.Report.BusinessReportUIController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Label;
 import java.io.File;
 import java.io.IOException;
 
@@ -40,6 +38,10 @@ public class SettingsController {
 
     FileChooser fileChooser = new FileChooser();
 
+    public void handleButton() {
+        // Testing
+        }
+
     public void initialize() {
         // Save Changes
         saveButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -58,7 +60,7 @@ public class SettingsController {
         // Generate Business Report
         generateButton.setOnAction(new EventHandler<>() {
             @Override public void handle(ActionEvent e) {
-                FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("businessReportUI.fxml"));
+                FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("../Business/Report/businessReportUI.fxml"));
                 try {
                     Stage stage = new Stage();
                     stage.setTitle("ACME Delivery Service - Business Report UI");
@@ -79,11 +81,13 @@ public class SettingsController {
 
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         Business b = q.getBusinessSettings();
-        deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
-        deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
-        bonusRateField.setText(String.valueOf(b.getBonusRate()));
-        bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
-        addressField.setText(b.getAddress());
+
+        //TEST
+        //deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
+        //deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
+        //bonusRateField.setText(String.valueOf(b.getBonusRate()));
+        //bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
+        //addressField.setText(b.getAddress());
         q = null;
     }
 

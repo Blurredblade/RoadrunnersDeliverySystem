@@ -1,4 +1,4 @@
-package UI;
+package UI.Settings;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,7 +17,7 @@ public class SettingsManager {
     // Show the Settings Screen
     public void showSettingsScreen() {
         try {
-            FXMLLoader loadSettings = new FXMLLoader(getClass().getResource("settingsUI.fxml"));
+            FXMLLoader loadSettings = new FXMLLoader(getClass().getResource("../Settings/settingsUI.fxml"));
             scene.setRoot(loadSettings.load());
         } catch (IOException ex) {
             Logger.getLogger(SettingsManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -27,7 +27,7 @@ public class SettingsManager {
     // Show the Business Report Generation Screen
     public void showBusinessReport() {
         try {
-            FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("businessReportUI.fxml"));
+            FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("../Business/Report/businessReportUI.fxml"));
             scene.setRoot(loadBusinessReport.load());
         } catch (IOException ex) {
             Logger.getLogger(SettingsManager.class.getName()).log(Level.SEVERE, null, ex);
