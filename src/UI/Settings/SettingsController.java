@@ -3,7 +3,7 @@ package UI.Settings;
 
 import DataManagement.DatabaseManager;
 import Models.Business;
-import UI.Business.Report.BusinessReportUIController;
+import UI.BusinessReport.BusinessReportUIController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -60,7 +60,7 @@ public class SettingsController {
         // Generate Business Report
         generateButton.setOnAction(new EventHandler<>() {
             @Override public void handle(ActionEvent e) {
-                FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("../Business/Report/businessReportUI.fxml"));
+                FXMLLoader loadBusinessReport = new FXMLLoader(getClass().getResource("../BusinessReport/businessReportUI.fxml"));
                 try {
                     Stage stage = new Stage();
                     stage.setTitle("ACME Delivery Service - Business Report UI");

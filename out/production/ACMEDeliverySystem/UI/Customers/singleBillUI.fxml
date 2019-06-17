@@ -4,17 +4,17 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="231.0" fx:controller="UI.Business.Report.BusinessReportUIController">
+<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="231.0" fx:controller="UI.BusinessReport.BusinessReportUIController">
     <StackPane>
         <VBox>
             <StackPane>
                 <!-- Title -->
-                <Label text="Generate Business Report"/>
+                <Label text="Generate Single Bill for Customer"/>
             </StackPane>
 
             <GridPane vgap="5" alignment="CENTER">
                 <!-- Business Report Generation Screen -->
-                <Label text="Dates for Report" GridPane.rowIndex="0"/>
+                <Label text="Dates for Bill" GridPane.rowIndex="0"/>
                 <DatePicker fx:id="startDate" GridPane.rowIndex="1" />
                 <Label text="to" GridPane.rowIndex="2"/>
                 <DatePicker fx:id="endDate" GridPane.rowIndex="3" />
