@@ -37,7 +37,6 @@ public class SettingsController {
     @FXML private SettingsController settingsController;
 
     FileChooser fileChooser = new FileChooser();
-
     public void handleButton() {
         // Testing
         }

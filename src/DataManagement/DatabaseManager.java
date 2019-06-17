@@ -1,7 +1,7 @@
 package DataManagement;
 
 import Models.*;
-//import com.mysql.cj.xdevapi.Result;
+import com.mysql.cj.xdevapi.Result;
 
 import java.sql.*;
 import java.util.Properties;
@@ -149,7 +149,7 @@ public class DatabaseManager {
             Connection con = new DatabaseConnection().Connect();
             if(con != null) {
                 try {
-                    PreparedStatement statement = con.prepareStatement("SELECT password FROM USER WHERE username=?");
+                    PreparedStatement statement = con.prepareStatement("SELECT pass FROM USERCREDENTIALS WHERE username=?");
                     statement.setString(1, username);
                     ResultSet rs = statement.executeQuery();
                     if (rs.next()) {
@@ -163,6 +163,24 @@ public class DatabaseManager {
                         con.close();
                         return 0;
                     }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    return -1;
+                }
+            }
+            return -1;
+        }
+
+        public int getUserPermissions(String username, String password){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("SELECT permissions FROM USERCREDENTIALS WHERE username=? AND pass=?");
+                    statement.setString(1, username);
+                    statement.setString(2, password);
+                    ResultSet rs = statement.executeQuery();
+                    rs.next();
+                    return rs.getInt(1);
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                     return -1;
