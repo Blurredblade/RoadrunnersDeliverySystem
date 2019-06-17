@@ -83,11 +83,13 @@ public class SettingsController {
         Business b = q.getBusinessSettings();
 
         //TEST
-        //deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
-        //deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
-        //bonusRateField.setText(String.valueOf(b.getBonusRate()));
-        //bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
-        //addressField.setText(b.getAddress());
+        /**
+        deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
+        deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
+        bonusRateField.setText(String.valueOf(b.getBonusRate()));
+        bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
+        addressField.setText(b.getAddress());
+         **/
         q = null;
     }
 

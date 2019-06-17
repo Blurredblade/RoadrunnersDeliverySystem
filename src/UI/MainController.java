@@ -1,11 +1,16 @@
 package UI;
 
 import UI.Customers.CustomerController;
+import UI.Login.LoginManager;
 import UI.Settings.SettingsController;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.stage.Stage;
 
 public class MainController {
 
@@ -18,9 +23,6 @@ public class MainController {
     @FXML private Tab mapTab;
     @FXML private Tab settingsTab;
 
-    @FXML private Tab fooTab;
-    @FXML private Tab barTab;
-
     // Controllers
     @FXML private CustomerController ordersController;
     @FXML private CustomerController customersController;
@@ -29,9 +31,11 @@ public class MainController {
     @FXML private CustomerController mapController;
     @FXML private CustomerController settingsController;
 
-    @FXML private CustomerController fooTabPageController;
-    @FXML private SettingsController barTabPageController;
+    // Button
+    @FXML private Button logoutButton;
 
+    private LoginManager loginManager;
+    private Stage stage;
 
     public void init() {
         tabPane.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) -> {
@@ -48,13 +52,17 @@ public class MainController {
                     break;
                 case "settingsTab":
                     break;
-                case "barTab":
-                    barTabPageController.handleButton();
-                    break;
-                case "fooTab":
-                    fooTabPageController.handleButton();
-                    break;
             }
         });
+
+        /**
+        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                loginManager.logout();
+                stage.close();
+            }
+        });
+         **/
     }
 }

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Run extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        //Main is now in the LoginApp
         Scene scene = new Scene(new StackPane());
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
@@ -16,6 +17,7 @@ public class Run extends Application {
         MainController controller = loader.getController();
         controller.init();
 
+        primaryStage.setTitle("ACME Delivery Service");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

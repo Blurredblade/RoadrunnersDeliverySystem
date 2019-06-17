@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 
 <!-- Customers Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="UI.Customers.CustomerController">
     <children>
         <Label layoutX="426.0" layoutY="14.0" text="Customers">
             <font>
                 <Font size="18.0"/>
             </font>
         </Label>
-        <Button layoutX="31.0" layoutY="41.0" mnemonicParsing="false" text="New Customer"/>
+        <Button fx:id="addCustomerBtn" layoutX="31.0" layoutY="41.0" mnemonicParsing="false" text="New Customer"/>
         <TableView layoutX="31.0" layoutY="80.0" prefHeight="294.0" prefWidth="874.0">
             <columns>
                 <TableColumn prefWidth="75.0" text="[]"/>
@@ -25,16 +25,14 @@
                 <TableColumn minWidth="0.0" prefWidth="440.0" text="Location"/>
             </columns>
         </TableView>
-        <ScrollBar layoutX="905.0" layoutY="80.0" orientation="VERTICAL" prefHeight="294.0"
-                   prefWidth="14.0"/>
+        <ScrollBar layoutX="905.0" layoutY="80.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0"/>
         <ScrollBar layoutX="31.0" layoutY="374.0" prefHeight="14.0" prefWidth="875.0"/>
-        <Button layoutX="31.0" layoutY="414.0" mnemonicParsing="false" text="Edit Customer"/>
-        <Button layoutX="31.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0"
+        <Button fx:id="editCustBtn" layoutX="31.0" layoutY="414.0" mnemonicParsing="false" text="Edit Customer"/>
+        <Button fx:id="singleBillBtn" layoutX="31.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0"
                 prefWidth="91.0" text="Generate Bill"/>
-        <Button layoutX="147.0" layoutY="414.0" mnemonicParsing="false" text="Delete Customer"/>
-        <Button layoutX="147.0" layoutY="454.0" mnemonicParsing="false" text="Generate All Bills"/>
-        <Button layoutX="832.0" layoutY="583.0" mnemonicParsing="false" text="Logout"/>
-        <CheckBox layoutX="729.0" layoutY="418.0" mnemonicParsing="false"
-                  text="Display Inactive Customers"/>
+        <Button fx:id="deleteCustbtn" layoutX="147.0" layoutY="414.0" mnemonicParsing="false" text="Delete Customer"/>
+        <Button fx:id="allBillBtn" layoutX="147.0" layoutY="454.0" mnemonicParsing="false" text="Generate All Bills"/>
+        <Button fx:id="logoutButton" layoutX="832.0" layoutY="583.0" mnemonicParsing="false" text="Logout"/>
+        <CheckBox layoutX="729.0" layoutY="418.0" mnemonicParsing="false" text="Display Inactive Customers"/>
     </children>
 </AnchorPane>

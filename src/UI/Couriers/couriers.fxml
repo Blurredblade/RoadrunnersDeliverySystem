@@ -10,33 +10,30 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.layout.VBox?>
 
 <!-- Couriers Tab -->
-
-<AnchorPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="200.0" prefWidth="200.0"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="UI.Couriers.CourierController">
     <children>
-        <Button layoutX="29.0" layoutY="82.0" mnemonicParsing="false" text="New Courier"/>
+        <Button fx:id="addCourierBtn" layoutX="29.0" layoutY="82.0" mnemonicParsing="false" text="New Courier"/>
         <TableView layoutX="29.0" layoutY="126.0" prefHeight="266.0" prefWidth="871.0">
             <columns>
                 <TableColumn prefWidth="75.0" text="[]"/>
                 <TableColumn prefWidth="75.0" text="Name"/>
             </columns>
         </TableView>
-        <ScrollBar layoutX="900.0" layoutY="126.0" orientation="VERTICAL" prefHeight="266.0"
-                   prefWidth="14.0"/>
+        <ScrollBar layoutX="900.0" layoutY="126.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0"/>
         <ScrollBar layoutX="29.0" layoutY="392.0" prefHeight="14.0" prefWidth="870.0"/>
-        <Button layoutX="29.0" layoutY="419.0" mnemonicParsing="false" text="Edit Courier"/>
-        <Button layoutX="29.0" layoutY="459.0" mnemonicParsing="false" prefHeight="25.0"
-                prefWidth="80.0" text="Get Report"/>
-        <Button layoutX="126.0" layoutY="419.0" mnemonicParsing="false" text="Delete Courier"/>
-        <Button layoutX="836.0" layoutY="592.0" mnemonicParsing="false" text="Logout"/>
+        <Button fx:id="editCourierBtn" layoutX="29.0" layoutY="419.0" mnemonicParsing="false" text="Edit Courier"/>
+        <Button fx:id="courierReportBtn" layoutX="29.0" layoutY="459.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Get Report"/>
+        <Button fx:id="deleteCourierbtn" layoutX="126.0" layoutY="419.0" mnemonicParsing="false" text="Delete Courier"/>
+        <Button fx:id="logoutButton" layoutX="836.0" layoutY="592.0" mnemonicParsing="false" text="Logout"/>
         <Label layoutX="431.0" layoutY="25.0" text="Couriers">
             <font>
                 <Font size="18.0"/>
             </font>
         </Label>
-        <CheckBox layoutX="749.0" layoutY="423.0" mnemonicParsing="false"
-                  text="Display Inactive Couriers"/>
+        <CheckBox fx:id="inactiveCouriers" layoutX="749.0" layoutY="423.0" mnemonicParsing="false" text="Display Inactive Couriers"/>
     </children>
 </AnchorPane>

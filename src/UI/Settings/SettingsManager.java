@@ -10,9 +10,7 @@ import java.util.logging.Logger;
 public class SettingsManager {
     private Scene scene;
 
-    public SettingsManager(Scene scene) {
-        this.scene = scene;
-    }
+    public SettingsManager(Scene scene) { this.scene = scene; }
 
     // Show the Settings Screen
     public void showSettingsScreen() {

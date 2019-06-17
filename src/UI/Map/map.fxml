@@ -6,17 +6,16 @@
 <?import javafx.scene.text.Font?>
 
 <!-- Map Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Map.MapController">
     <children>
         <Label layoutX="168.0" layoutY="23.0" text="Map">
             <font>
                 <Font size="18.0"/>
             </font>
         </Label>
-        <Button layoutX="718.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0"
-                prefWidth="83.0" text="Mark Open"/>
-        <Button layoutX="718.0" layoutY="137.0" mnemonicParsing="false" text="Mark Closed"/>
-        <Button layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout"/>
+        <Button fx:id="openIntersectionBtn" layoutX="718.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Mark Open"/>
+        <Button fx:id="closedIntersectionBtn" layoutX="718.0" layoutY="137.0" mnemonicParsing="false" text="Mark Closed"/>
+        <Button fx:id="logoutBtn" layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout"/>
         <Label layoutX="665.0" layoutY="41.0" text="Currently Selected Intersection:"/>
     </children>
 </AnchorPane>

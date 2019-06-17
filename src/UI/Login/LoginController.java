@@ -17,7 +17,11 @@ public class LoginController {
             @Override public void handle(ActionEvent event) {
                 String sessionID = authorize();
                 if (sessionID != null) {
-                    loginManager.authenticated(sessionID);
+                    try {
+                        loginManager.authenticated(sessionID);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });

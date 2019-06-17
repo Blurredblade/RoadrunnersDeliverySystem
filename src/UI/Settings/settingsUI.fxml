@@ -13,10 +13,6 @@
 
 <!-- Settings Tab -->
 <VBox xmlns:fx="http://www.w3.org/2001/XInclude" fx:controller="UI.Settings.SettingsController">
-    <!-- TESTING
-    <Button fx:id="btnBarTab" onAction="#handleButton" text="Change text"/>
-    -->
-
     <VBox>
         <StackPane>
             <!-- Title -->
@@ -48,7 +44,6 @@
             <Button fx:id="generateButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false"
                     text="Generate Business Report" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
-
             <!-- UI Constraints -->
             <rowConstraints>
                 <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="30.0"/>
@@ -63,8 +58,7 @@
 
         <StackPane>
             <!-- Log Out Button -->
-            <Button fx:id="logoutButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Log Out"
-                    StackPane.alignment="CENTER_RIGHT"/>
+            <Button fx:id="logoutButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Log Out" StackPane.alignment="CENTER_RIGHT"/>
         </StackPane>
         <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>

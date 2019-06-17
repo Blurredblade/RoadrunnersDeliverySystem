@@ -10,7 +10,7 @@
 
 
 <!-- Order Takers Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
     <children>
         <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
             <font>
@@ -24,14 +24,11 @@
                 <TableColumn prefWidth="639.0" text="Name"/>
             </columns>
         </TableView>
-        <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0"
-                   prefWidth="14.0"/>
+        <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0"/>
         <ScrollBar layoutX="40.0" layoutY="368.0" prefHeight="14.0" prefWidth="846.0"/>
-        <Button layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0"
-                prefWidth="122.0" text="Add Order Takers"/>
-        <Button layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0"
-                prefWidth="122.0" text="Edit Order Takers"/>
-        <Button layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers"/>
-        <Button layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout"/>
+        <Button fx:id="addOTakersBtn" layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Add Order Takers"/>
+        <Button fx:id="editOTakersBtn" layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Edit Order Takers"/>
+        <Button fx:id="deleteOTakersBtn" layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers"/>
+        <Button fx:id="logoutButton" layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout"/>
     </children>
 </AnchorPane>

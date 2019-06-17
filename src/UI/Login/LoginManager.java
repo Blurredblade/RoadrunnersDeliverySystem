@@ -4,22 +4,26 @@ import java.io.IOException;
 import java.util.logging.*;
 
 import UI.Order.OrderController;
+import UI.Run;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
+import javafx.stage.Stage;
 
 /** Manages control flow for logins */
 public class LoginManager {
+    private Stage stage;
     private Scene scene;
 
-    public LoginManager(Scene scene) {
+    public LoginManager(Scene scene, Stage stage) {
         this.scene = scene;
+        this.stage = stage;
     }
 
     /**
      * Callback method invoked to notify that a user has been authenticated.
      * Will show the main application screen.
      */
-    public void authenticated(String sessionID) {
+    public void authenticated(String sessionID) throws Exception {
         showMainView(sessionID);
     }
 
@@ -37,25 +41,26 @@ public class LoginManager {
                     getClass().getResource("login.fxml")
             );
             scene.setRoot(loader.load());
-            LoginController controller =
-                    loader.getController();
+            LoginController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    private void showMainView(String sessionID) {
+    private void showMainView(String sessionID) throws Exception {
+        Run mainUI = new Run();
+        mainUI.start(stage);
+        /**
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("../Order/order.fxml")
+            FXMLLoader loader = new FXMLLoader( getClass().getResource("../Order/order.fxml")
             );
             scene.setRoot(loader.load());
-            OrderController controller =
-                    loader.getController();
+            OrderController controller = loader.getController();
             controller.initSessionID(this, sessionID);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
         }
+         **/
     }
 }
