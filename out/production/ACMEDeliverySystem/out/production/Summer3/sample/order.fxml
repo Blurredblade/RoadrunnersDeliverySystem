@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="937.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+
+        <!-- Orders Tab -->
+        <Tab text="Orders">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="41.0" layoutY="58.0" mnemonicParsing="false" text="New Order" />
+                        <Label layoutX="442.0" layoutY="14.0" text="Orders">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="304.0" layoutY="62.0" text="Filter by Status:" />
+                        <ChoiceBox layoutX="394.0" layoutY="58.0" prefWidth="150.0" />
+                        <TableView layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
+                            <columns>
+                                <TableColumn prefWidth="34.0" text="[]" />
+                                <TableColumn prefWidth="54.0" text="Order #" />
+                                <TableColumn prefWidth="255.0" text="Delivery Customer" />
+                                <TableColumn prefWidth="171.0" text="Pickup Customer" />
+                                <TableColumn minWidth="0.0" prefWidth="100.0" text="Pickup Time" />
+                                <TableColumn prefWidth="82.0" text="Courier" />
+                                <TableColumn minWidth="6.0" prefWidth="180.0" text="Estimated Departure" />
+                            </columns>
+                        </TableView>
+                        <Button layoutX="21.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Order Info" />
+                        <Button layoutX="21.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Print Route" />
+                        <Button layoutX="21.0" layoutY="510.0" mnemonicParsing="false" text="Cancel Order" />
+                        <Button layoutX="126.0" layoutY="436.0" mnemonicParsing="false" text="Assign Courier" />
+                        <Button layoutX="126.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Record Times" />
+                        <Button layoutX="843.0" layoutY="601.0" mnemonicParsing="false" text="Logout" />
+                        <ScrollBar layoutX="900.0" layoutY="92.0" orientation="VERTICAL" prefHeight="324.0" prefWidth="14.0" />
+                        <ScrollBar layoutX="21.0" layoutY="416.0" prefHeight="14.0" prefWidth="879.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <!-- Customers Tab -->
+        <Tab text="Customers">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="426.0" layoutY="14.0" text="Customers">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="31.0" layoutY="41.0" mnemonicParsing="false" text="New Customer" />
+                        <TableView layoutX="31.0" layoutY="80.0" prefHeight="294.0" prefWidth="874.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="[]" />
+                                <TableColumn prefWidth="358.0" text="Name" />
+                                <TableColumn minWidth="0.0" prefWidth="440.0" text="Location" />
+                            </columns>
+                        </TableView>
+                        <ScrollBar layoutX="905.0" layoutY="80.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
+                        <ScrollBar layoutX="31.0" layoutY="374.0" prefHeight="14.0" prefWidth="875.0" />
+                        <Button layoutX="31.0" layoutY="414.0" mnemonicParsing="false" text="Edit Customer" />
+                        <Button layoutX="31.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Generate Bill" />
+                        <Button layoutX="147.0" layoutY="414.0" mnemonicParsing="false" text="Delete Customer" />
+                        <Button layoutX="147.0" layoutY="454.0" mnemonicParsing="false" text="Generate All Bills" />
+                        <Button layoutX="832.0" layoutY="583.0" mnemonicParsing="false" text="Logout" fx:id="logoutButton" id="logout" />
+                        <CheckBox layoutX="729.0" layoutY="418.0" mnemonicParsing="false" text="Display Inactive Customers" />
+                    </children>
+                </AnchorPane>
+            </content></Tab>
+
+        <!-- Couriers Tab -->
+        <Tab text="Couriers">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="29.0" layoutY="82.0" mnemonicParsing="false" text="New Courier" />
+                        <TableView layoutX="29.0" layoutY="126.0" prefHeight="266.0" prefWidth="871.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="[]" />
+                                <TableColumn prefWidth="75.0" text="Name" />
+                            </columns>
+                        </TableView>
+                        <ScrollBar layoutX="900.0" layoutY="126.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0" />
+                        <ScrollBar layoutX="29.0" layoutY="392.0" prefHeight="14.0" prefWidth="870.0" />
+                        <Button layoutX="29.0" layoutY="419.0" mnemonicParsing="false" text="Edit Courier" />
+                        <Button layoutX="29.0" layoutY="459.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Get Report" />
+                        <Button layoutX="126.0" layoutY="419.0" mnemonicParsing="false" text="Delete Courier" />
+                        <Button layoutX="836.0" layoutY="592.0" mnemonicParsing="false" text="Logout" />
+                        <Label layoutX="431.0" layoutY="25.0" text="Couriers">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <CheckBox layoutX="749.0" layoutY="423.0" mnemonicParsing="false" text="Display Inactive Couriers" />
+                    </children></AnchorPane>
+            </content></Tab>
+
+        <!-- Order Takers Tab -->
+        <Tab text="Order Takers">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <TableView layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" text="[]" />
+                                <TableColumn prefWidth="131.0" text="Order Taker #" />
+                                <TableColumn prefWidth="639.0" text="Name" />
+                            </columns>
+                        </TableView>
+                        <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0" />
+                        <ScrollBar layoutX="40.0" layoutY="368.0" prefHeight="14.0" prefWidth="846.0" />
+                        <Button layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Add Order Takers" />
+                        <Button layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Edit Order Takers" />
+                        <Button layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers" />
+                        <Button layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout" />
+                    </children>
+                </AnchorPane>
+            </content></Tab>
+
+        <!-- Map Tab -->
+        <Tab text="Map">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="168.0" layoutY="23.0" text="Map">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="718.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Mark Open" />
+                        <Button layoutX="718.0" layoutY="137.0" mnemonicParsing="false" text="Mark Closed" />
+                        <Button layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout" />
+                        <Label layoutX="665.0" layoutY="41.0" text="Currently Selected Intersection:" />
+                    </children>
+                </AnchorPane>
+            </content></Tab>
+
+        <!-- Settings Tab -->
+        <Tab text="Settings">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            </content></Tab>
+    </tabs>
+</TabPane>

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55a18e2f-11df-41a3-a8fb-2ea4e186fe4b" name="Default Changelist" comment="- Merged my part from Sprint 1 with the rest of the project.&#10;- Fixed the tabs and reordered the files a bit.&#10;&#10;To go:&#10;- Get the database to work with the project, I am almost there.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_42_bin.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/DataManagement/DatabaseManager$DatabaseConnection.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/DataManagement/DatabaseManager$QueryManager.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/DataManagement/DatabaseManager.class" afterDir="false" />
@@ -20,6 +19,8 @@
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Couriers/couriers.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Customers/CustomerController.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Customers/customerUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Customers/multipleBillUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Customers/singleBillUI.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Login/LoginApp.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Login/LoginController$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Login/LoginController.class" afterDir="false" />
@@ -40,31 +41,7 @@
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Settings/SettingsManager.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Settings/settingsUI.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Couriers/CourierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Customers/CustomerBillsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Customers/multipleBillUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Customers/singleBillUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Map/MapController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACMEDeliverySystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ACMEDeliverySystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Business/Report/BusinessReportUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Business/Report/BusinessReportUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Couriers/couriers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Couriers/couriers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Customers/customerUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Customers/customerUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Login/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Login/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Login/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Login/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Login/LoginManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Map/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Map/map.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Order/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Order/order.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Settings/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Settings/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Settings/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Settings/SettingsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Settings/settingsUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Settings/settingsUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/businessReportUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Business/Report/businessReportUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/sample/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/out/production/Summer3/sample/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/sample/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/out/production/Summer3/sample/order.fxml" afterDir="false" />
@@ -81,13 +58,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -192,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-115" />
     <option name="y" value="281" />
     <option name="width" value="1215" />
@@ -214,11 +196,6 @@
             <path>
               <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
               <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="sqlfiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -226,62 +203,6 @@
               <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Couriers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Customers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="OrderTakers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataManagement Branch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataManagement Branch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="Settings" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,14 +281,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560715369742</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Added a controller to each of the tabs.&#10;- Cleaned up the code a bit&#10;&#10;To do:&#10;- The logout function is there but the logout button is broken, will fix later.">
+      <created>1560754020711</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560754020711</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26107383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26107383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -376,14 +304,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25977653" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25977653" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32960895" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.26256984" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -427,7 +355,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="- Merged my part from Sprint 1 with the rest of the project.&#10;- Fixed the tabs and reordered the files a bit.&#10;&#10;To go:&#10;- Get the database to work with the project, I am almost there." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Merged my part from Sprint 1 with the rest of the project.&#10;- Fixed the tabs and reordered the files a bit.&#10;&#10;To go:&#10;- Get the database to work with the project, I am almost there." />
+    <MESSAGE value="- Added a controller to each of the tabs.&#10;- Cleaned up the code a bit&#10;&#10;To do:&#10;- The logout function is there but the logout button is broken, will fix later." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added a controller to each of the tabs.&#10;- Cleaned up the code a bit&#10;&#10;To do:&#10;- The logout function is there but the logout button is broken, will fix later." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Models/Business.java">
@@ -700,10 +629,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
