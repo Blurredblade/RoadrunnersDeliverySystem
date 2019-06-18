@@ -236,9 +236,9 @@ public class DatabaseManager {
         public Connection Connect(){
             try {
                 //Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost:3306/acmedelivery";
+                String url = "jdbc:mysql://localhost:33061/acmedelivery";
                 Properties info = new Properties();
-                info.put("user", "root");
+                info.put("user", "DMCTruong");
                 info.put("password", "password1");
                 return DriverManager.getConnection(url, info);
             }catch(Exception e){
