@@ -17,11 +17,11 @@
                 <Font size="18.0"/>
             </font>
         </Label>
-        <TableView layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
+        <TableView fx:id="orderTakerTable" layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="[]"/>
-                <TableColumn prefWidth="131.0" text="Order Taker #"/>
-                <TableColumn prefWidth="639.0" text="Name"/>
+
+                <TableColumn fx:id="colOrderTakerID" prefWidth="131.0" text="Order Taker #"/>
+                <TableColumn fx:id="colOrderTakerName" prefWidth="639.0" text="Name"/>
             </columns>
         </TableView>
         <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0"/>

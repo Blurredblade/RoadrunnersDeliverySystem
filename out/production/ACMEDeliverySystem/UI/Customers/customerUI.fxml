@@ -18,11 +18,11 @@
             </font>
         </Label>
         <Button fx:id="addCustomerBtn" layoutX="31.0" layoutY="41.0" mnemonicParsing="false" text="New Customer"/>
-        <TableView layoutX="31.0" layoutY="80.0" prefHeight="294.0" prefWidth="874.0">
+        <TableView fx:id="customerTable" layoutX="31.0" layoutY="80.0" prefHeight="294.0" prefWidth="874.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="[]"/>
-                <TableColumn prefWidth="358.0" text="Name"/>
-                <TableColumn minWidth="0.0" prefWidth="440.0" text="Location"/>
+                <TableColumn fx:id="colCustomerID" prefWidth="75.0" text="[]"/>
+                <TableColumn fx:id="colCustomerName" prefWidth="358.0" text="Name"/>
+                <TableColumn fx:id="colCustomerLoc" minWidth="0.0" prefWidth="440.0" text="Location"/>
             </columns>
         </TableView>
         <ScrollBar layoutX="905.0" layoutY="80.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0"/>

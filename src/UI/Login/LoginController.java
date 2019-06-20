@@ -44,10 +44,12 @@ public class LoginController {
         q = null;
         switch(verify) {
             case 0:
-                errorText.setText("Username and password combination not recognized. Please try again.");
+                //errorText.setText("Username and password combination not recognized. Please try again.");
+                System.out.print("Meow 1");
                 return null;
             case 1:
-                errorText.setText("Username and password combination not recognized. Please try again.");
+                //errorText.setText("Username and password combination not recognized. Please try again.");
+                System.out.print("Meow 2");
                 return null;
             case 2:
                 return generateSessionID();

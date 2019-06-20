@@ -17,7 +17,8 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM COURIER WHERE courier_id = " + ID);
                     rs.next();
-                    c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                    // TEST
+                    //c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -35,8 +36,9 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM COURIER");
                     while(rs.next()){
-                        Courier c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
-                        couriers.add(c);
+                        // TEST
+                        //Courier c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                        //couriers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -55,7 +57,7 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMER WHERE customer_id = " + ID);
                     rs.next();
-                    c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
+                    //c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -73,8 +75,8 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMER");
                     while(rs.next()){
-                        Customer c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
-                        customers.add(c);
+                        //Customer c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
+                        //customers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -93,7 +95,7 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM ORDERTAKER WHERE orderTaker_id = " + ID);
                     rs.next();
-                    o = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                    //o = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -111,8 +113,8 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM ORDERTAKER");
                     while(rs.next()){
-                        OrderTaker c = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
-                        orderTakers.add(c);
+                        //OrderTaker c = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                        //orderTakers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -232,20 +234,26 @@ public class DatabaseManager {
         }
     }
 
+
     static class DatabaseConnection{
         public Connection Connect(){
             try {
                 //Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost:33061/acmedelivery";
+                String url = "jdbc:mysql://localhost:3306/acmedelivery";
                 Properties info = new Properties();
-                info.put("user", "DMCTruong");
-                info.put("password", "password1");
+                info.put("user", "root");
+                info.put("password", "Aerithv24");
                 return DriverManager.getConnection(url, info);
             }catch(Exception e){
                 System.out.println(e);
                 return null;
             }
         }
+    }
+
+    // This is here temporarily
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/acmedelivery","root","Aerithv24");
     }
 
 }
