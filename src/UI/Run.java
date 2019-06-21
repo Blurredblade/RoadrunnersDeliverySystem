@@ -1,5 +1,7 @@
 package UI;
 
+import DataManagement.DatabaseManager;
+import Models.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +22,9 @@ public class Run extends Application {
         primaryStage.setTitle("ACME Delivery Service");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        Map map = new Map();
+        map.calculate();
     }
 
     public static void main(String[] args) {

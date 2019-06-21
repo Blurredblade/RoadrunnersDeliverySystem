@@ -134,8 +134,8 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMERORDER");
                     while(rs.next()){
-                        CustomerOrder o = new CustomerOrder(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getBoolean(7), rs.getString(8), rs.getTime(9));
-                        orders.add(o);
+                        //CustomerOrder o = new CustomerOrder(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getBoolean(7), rs.getString(8), rs.getTime(9));
+                        //orders.add(o);
                     }
                     con.close();
                 }catch(Exception e){

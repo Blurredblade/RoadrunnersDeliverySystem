@@ -10,7 +10,7 @@
 
 
 <!-- Order Takers Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.OrderTakerController">
     <children>
         <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
             <font>

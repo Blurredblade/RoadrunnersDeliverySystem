@@ -1,15 +1,27 @@
 package UI.Order;
 
+import DataManagement.DatabaseManager;
+import Models.Courier;
+import Models.CustomerOrder;
+import Models.OrderTaker;
 import UI.Login.LoginManager;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class OrderController extends Application {
     @FXML private Button logoutButton;
@@ -22,6 +34,63 @@ public class OrderController extends Application {
     @FXML private Button printRouteBtn;
     @FXML private Button recordTimesBtn;
     @FXML private Button cancelOrderBtn;
+
+    @FXML private TableView orderTable;
+    public Connection con;
+    private Logger logger;
+    private DatabaseManager objDbClass;
+
+    @FXML public TableColumn colOrderNum;
+    @FXML public TableColumn colDeliveryCust;
+    @FXML public TableColumn colPickUpCust;
+    @FXML public TableColumn colPickUpTime;
+    @FXML public TableColumn colPickCourier;
+    @FXML public TableColumn colEstDepart;
+
+    @FXML
+    void initialize(){
+        assert orderTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'order.fxml'.";
+        // Need to work on the order number col later
+        colOrderNum.setCellValueFactory( new PropertyValueFactory<CustomerOrder,Integer>("orderID"));
+        colDeliveryCust.setCellValueFactory( new PropertyValueFactory<CustomerOrder, Integer>("deliveryCustID"));
+        colPickUpCust.setCellValueFactory( new PropertyValueFactory<CustomerOrder, Integer>("pickUpCustID"));
+        //colPickUpTime.setCellValueFactory( new PropertyValueFactory<CustomerOrder,String>("pickUpTime"));
+        colPickCourier.setCellValueFactory( new PropertyValueFactory<CustomerOrder,Integer>("courierID"));
+        //colEstDepart.setCellValueFactory( new PropertyValueFactory<CustomerOrder,String>("estDepart"));
+
+        objDbClass = new DatabaseManager();
+        try{
+            con = objDbClass.getConnection();
+            buildData();
+        }
+        catch(ClassNotFoundException ce){ logger.info(ce.toString()); }
+        catch(SQLException ce){ logger.info(ce.toString()); }
+    }
+
+    private ObservableList<CustomerOrder> data;
+    public void buildData(){
+        data = FXCollections.observableArrayList();
+        try{
+            String SQL = "Select * from customerorder Order By order_id";
+            ResultSet rs = con.createStatement().executeQuery(SQL);
+            while(rs.next()){
+                CustomerOrder cm = new CustomerOrder();
+                cm.orderID.set(rs.getInt("order_id"));
+                cm.deliveryCustID.set(rs.getInt("delivery_customer_id"));
+                cm.pickUpCustID.set(rs.getInt("pickup_customer_id"));
+                //cm.pickUpTime.set(rs.getString("pick_up_time"));
+                cm.courierID.set(rs.getInt("courier_id"));
+                //cm.estDepart.set(rs.getString("estimated_departure"));
+                cm.test();
+                data.add(cm);
+            }
+            orderTable.setItems(data);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error on Building Data");
+        }
+    }
 
     public void initSessionID(final LoginManager loginManager, String sessionID) {
         sessionLabel.setText(sessionID);
