@@ -13,9 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.logging.Logger;
 
 public class CourierController {
@@ -37,6 +35,63 @@ public class CourierController {
 
     @FXML
     void initialize(){
+        addCourierBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Added Courier");
+
+                try {
+                    String url = "jdbc:mysql://localhost:3306/acmedelivery";
+                    Connection conn = DriverManager.getConnection(url,"root","Password");
+                    Statement st = conn.createStatement();
+                    st.executeUpdate("INSERT INTO courier " +
+                            "VALUES (4, 'Zack Fair', 1)");
+                    buildData();
+                    conn.close();
+                } catch (Exception e) {
+                    System.err.println("Got an exception! ");
+                    System.err.println(e.getMessage());
+                }
+            }
+        });
+
+        editCourierBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Edited Courier");
+                try {
+                    String url = "jdbc:mysql://localhost:3306/acmedelivery";
+                    Connection conn = DriverManager.getConnection(url,"root","Password");
+                    Statement st = conn.createStatement();
+                    st.executeUpdate("UPDATE courier " +
+                            "SET courier_name='Jack Wax', isActive='0'" +
+                            "WHERE courier_id=1");
+                    buildData();
+                    conn.close();
+                } catch (Exception e) {
+                    System.err.println("Got an exception! ");
+                    System.err.println(e.getMessage());
+                }
+            }
+        });
+        deleteCourierbtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Deleted Courier");
+                try {
+                    String url = "jdbc:mysql://localhost:3306/acmedelivery";
+                    Connection conn = DriverManager.getConnection(url,"root","Password");
+                    Statement st = conn.createStatement();
+                    st.executeUpdate("DELETE FROM courier " +
+                            "WHERE courier_id=4");
+                    buildData();
+                    conn.close();
+                } catch (Exception e) {
+                    System.err.println("Got an exception! ");
+                    System.err.println(e.getMessage());
+                }
+            }
+        });
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

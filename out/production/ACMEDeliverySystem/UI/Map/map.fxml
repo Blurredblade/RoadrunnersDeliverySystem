@@ -6,17 +6,86 @@
 <?import javafx.scene.text.Font?>
 
 <!-- Map Tab -->
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Map.MapController">
     <children>
-        <Label layoutX="168.0" layoutY="23.0" text="Map">
+        <Label layoutX="300.0" layoutY="23.0" text="Map">
             <font>
                 <Font size="18.0"/>
             </font>
         </Label>
+        <ImageView fx:id="mapImage" layoutX="29.0" layoutY="50.0" fitHeight="500.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true"> </ImageView>
         <Button fx:id="openIntersectionBtn" layoutX="718.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Mark Open"/>
         <Button fx:id="closedIntersectionBtn" layoutX="718.0" layoutY="137.0" mnemonicParsing="false" text="Mark Closed"/>
-        <Button fx:id="logoutBtn" layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout"/>
+        <Button fx:id="logoutButton" layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout"/>
         <Label layoutX="665.0" layoutY="41.0" text="Currently Selected Intersection:"/>
+
+
+        <!-- There's probably a better way to add all of these intersection buttons but optimization is the last thing on mind for now. -->
+        <!-- Row 1 Buttons -->
+        <Button fx:id="1" layoutX="40.0" layoutY="60.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="2" layoutX="110.0" layoutY="60.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="3" layoutX="180.0" layoutY="60.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="4" layoutX="250.0" layoutY="60.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="5" layoutX="320.0" layoutY="60.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="6" layoutX="390.0" layoutY="60.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="7" layoutX="460.0" layoutY="60.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 2 Buttons -->
+        <Button fx:id="8" layoutX="40.0" layoutY="130.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="9" layoutX="110.0" layoutY="130.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="10" layoutX="180.0" layoutY="130.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="11" layoutX="250.0" layoutY="130.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="12" layoutX="320.0" layoutY="130.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="13" layoutX="390.0" layoutY="130.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="14" layoutX="460.0" layoutY="130.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 3 Buttons -->
+        <Button fx:id="15" layoutX="40.0" layoutY="210.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="16" layoutX="110.0" layoutY="210.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="17" layoutX="180.0" layoutY="210.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="18" layoutX="250.0" layoutY="210.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="19" layoutX="320.0" layoutY="210.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="20" layoutX="390.0" layoutY="210.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="21" layoutX="460.0" layoutY="210.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 4 Buttons -->
+        <Button fx:id="22" layoutX="40.0" layoutY="290.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="23" layoutX="110.0" layoutY="290.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="24" layoutX="180.0" layoutY="290.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="25" layoutX="250.0" layoutY="290.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="26" layoutX="320.0" layoutY="290.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="27" layoutX="390.0" layoutY="290.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="28" layoutX="460.0" layoutY="290.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 5 Buttons -->
+        <Button fx:id="29" layoutX="40.0" layoutY="360.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="30" layoutX="110.0" layoutY="360.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="31" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="32" layoutX="250.0" layoutY="360.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="33" layoutX="320.0" layoutY="360.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="34" layoutX="390.0" layoutY="360.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="35" layoutX="460.0" layoutY="360.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 6 Buttons -->
+        <Button fx:id="36" layoutX="40.0" layoutY="450.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="37" layoutX="110.0" layoutY="450.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="38" layoutX="180.0" layoutY="450.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="39" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="40" layoutX="320.0" layoutY="450.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="41" layoutX="390.0" layoutY="450.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="42" layoutX="460.0" layoutY="450.0" mnemonicParsing="false" text="7"/>
+
+        <!-- Row 7 Buttons -->
+        <Button fx:id="43" layoutX="40.0" layoutY="520.0" mnemonicParsing="false" text="1"/>
+        <Button fx:id="44" layoutX="110.0" layoutY="520.0" mnemonicParsing="false" text="2"/>
+        <Button fx:id="45" layoutX="180.0" layoutY="520.0" mnemonicParsing="false" text="3"/>
+        <Button fx:id="46" layoutX="250.0" layoutY="520.0" mnemonicParsing="false" text="4"/>
+        <Button fx:id="47" layoutX="320.0" layoutY="520.0" mnemonicParsing="false" text="5"/>
+        <Button fx:id="48" layoutX="390.0" layoutY="520.0" mnemonicParsing="false" text="6"/>
+        <Button fx:id="49" layoutX="460.0" layoutY="520.0" mnemonicParsing="false" text="7"/>
     </children>
 </AnchorPane>
 

@@ -253,7 +253,7 @@ public class DatabaseManager {
 
     // This is here temporarily
     public Connection getConnection() throws ClassNotFoundException, SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/acmedelivery","root","Aerithv24");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/acmedelivery","root","Password");
     }
 
 }
