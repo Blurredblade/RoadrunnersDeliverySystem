@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.40"
+            xmlns:fx="http://www.w3.org/2001/XInclude"
+            fx:controller="UI.MainController" >
+<TabPane  fx:id="tabPane"  tabClosingPolicy="UNAVAILABLE"
+         >
+    <Tab fx:id="ordersTab" text="Orders">
+        <fx:include fx:id="ordersPage" source="Order/order.fxml"/>
+    </Tab>
+    <Tab fx:id="customersTab" text="Customers">
+        <fx:include fx:id="customersPage" source="Customers/customerUI.fxml"/>
+    </Tab>
+    <Tab fx:id="couriersTab" text="Couriers">
+        <fx:include fx:id="couriersPage" source="Couriers/couriers.fxml"/>
+    </Tab>
+    <Tab fx:id="orderTakersTab" text="Order Takers">
+        <fx:include fx:id="orderTakersPage" source="OrderTakers/ordertakers.fxml"/>
+    </Tab>
+    <Tab fx:id="mapTab" text="Map">
+        <fx:include fx:id="mapPage" source="Map/map.fxml"/>
+    </Tab>
+    <Tab fx:id="settingsTab" text="Settings">
+        <fx:include fx:id="settingsPage" source="Settings/settingsUI.fxml"/>
+    </Tab>
+</TabPane>
+</AnchorPane>

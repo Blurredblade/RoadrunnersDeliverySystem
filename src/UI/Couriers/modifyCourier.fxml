@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Couriers.ModifyCourierController">
+   <children>
+      <Button fx:id="saveChangesBtn" layoutX="171.0" layoutY="258.0" mnemonicParsing="false" text="Save Changes" />
+      <Button fx:id="cancelBtn" layoutX="330.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Cancel" />
+      <CheckBox fx:id="activeCheckBox" layoutX="264.0" layoutY="207.0" mnemonicParsing="false" text="Active" />
+      <Label fx:id="nameLabel" layoutX="171.0" layoutY="144.0" text="Name:" />
+      <TextField fx:id="nameTextField" layoutX="271.0" layoutY="140.0" />
+      <Label fx:id="modifyCustomerLabel" layoutX="249.0" layoutY="85.0" text="Modify Customer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

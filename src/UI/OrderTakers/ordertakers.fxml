@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Order Takers Tab -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.OrderTakerController">
+    <children>
+        <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TableView fx:id="orderTakerTable" layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
+            <columns>
+                <!--
+                <TableColumn fx:id="colOrderTakerID" prefWidth="84.0" text="ID" />
+                -->
+                <TableColumn fx:id="colOrderTakerName" prefWidth="657.0" text="Name" />
+                <TableColumn fx:id="colOrderTakerActive" prefWidth="104.0" text="Active" />
+            </columns>
+        </TableView>
+        <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0" />
+        <ScrollBar layoutX="40.0" layoutY="368.0" prefHeight="14.0" prefWidth="846.0" />
+        <Button fx:id="addOTakersBtn" layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Add Order Takers" />
+        <Button fx:id="editOTakersBtn" layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Edit Order Takers" />
+        <Button fx:id="deleteOTakersBtn" layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers" />
+        <Button fx:id="logoutButton" layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout" />
+    </children>
+</AnchorPane>

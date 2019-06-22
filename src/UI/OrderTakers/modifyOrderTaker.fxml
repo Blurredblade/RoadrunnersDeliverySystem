@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.ModifyOrderTakerController">
+   <children>
+      <Button fx:id="saveChangesBtn" layoutX="168.0" layoutY="252.0" mnemonicParsing="false" text="Save Changes" />
+      <Button fx:id="cancelBtn" layoutX="337.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Cancel" />
+      <CheckBox fx:id="managerCheckBox" layoutX="264.0" layoutY="183.0" mnemonicParsing="false" text="Manager" />
+      <CheckBox fx:id="activeCheckBox" layoutX="264.0" layoutY="218.0" mnemonicParsing="false" text="Active" />
+      <Label fx:id="nameLabel" layoutX="222.0" layoutY="135.0" text="Name:" />
+      <Label fx:id="modifyOrderTakerLabel" layoutX="240.0" layoutY="83.0" text="Modify Order Taker">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="308.0" layoutY="131.0" />
+   </children>
+</AnchorPane>

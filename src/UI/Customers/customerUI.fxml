@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Customers Tab -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Customers.CustomerController">
+    <children>
+        <Label layoutX="426.0" layoutY="14.0" text="Customers">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="addCustomerBtn" layoutX="31.0" layoutY="41.0" mnemonicParsing="false" text="New Customer" />
+        <TableView fx:id="customerTable" layoutX="31.0" layoutY="80.0" prefHeight="294.0" prefWidth="874.0">
+            <columns>
+                <!--
+                <TableColumn fx:id="colCustomerID" prefWidth="75.0" text="ID" />
+                -->
+                <TableColumn fx:id="colCustomerName" prefWidth="358.0" text="Name" />
+                <TableColumn fx:id="colCustomerLoc" minWidth="0.0" prefWidth="296.0" text="Location" />
+                <TableColumn fx:id="colCustomerStatus" prefWidth="159.0" text="Active" />
+            </columns>
+        </TableView>
+        <ScrollBar layoutX="905.0" layoutY="80.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="14.0" />
+        <ScrollBar layoutX="31.0" layoutY="374.0" prefHeight="14.0" prefWidth="875.0" />
+        <Button fx:id="editCustBtn" layoutX="31.0" layoutY="414.0" mnemonicParsing="false" text="Edit Customer" />
+        <Button fx:id="singleBillBtn" layoutX="31.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Generate Bill" />
+        <Button fx:id="deleteCustbtn" layoutX="147.0" layoutY="414.0" mnemonicParsing="false" text="Delete Customer" />
+        <Button fx:id="allBillBtn" layoutX="147.0" layoutY="454.0" mnemonicParsing="false" text="Generate All Bills" />
+        <Button fx:id="logoutButton" layoutX="832.0" layoutY="583.0" mnemonicParsing="false" text="Logout" />
+        <CheckBox layoutX="729.0" layoutY="418.0" mnemonicParsing="false" text="Display Inactive Customers" />
+    </children>
+</AnchorPane>
