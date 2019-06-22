@@ -54,15 +54,5 @@ public class MainController {
                     break;
             }
         });
-
-        /**
-        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                loginManager.logout();
-                stage.close();
-            }
-        });
-         **/
     }
 }

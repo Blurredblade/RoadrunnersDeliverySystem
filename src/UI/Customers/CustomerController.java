@@ -41,6 +41,13 @@ public class CustomerController {
 
     @FXML
     public void initialize() {
+        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Logging out");
+                //loginManager.logout();
+            }
+        });
         // Add Customer
         addCustomerBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override

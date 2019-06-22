@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa789d4f-69b3-4399-82e0-90e4b7ca635c" name="Default Changelist" comment="- Courier Table is now populated with data from database&#10;- Customer Table is now populated with data from database&#10;&#10;Note:&#10;- There was an attempt to populate the Order Taker Table with data but for some reason it is not working. Will work on it more later&#10;- Will also clean up the code later">
-      <change afterPath="$PROJECT_DIR$/src/Models/Intersections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Map.java" afterDir="false" />
+    <list default="true" id="aa789d4f-69b3-4399-82e0-90e4b7ca635c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataManagement/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataManagement/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/CustomerOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/DataManagement/DatabaseManager$QueryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/DataManagement/DatabaseManager$QueryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/Models/CustomerOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/Models/CustomerOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/OrderController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/OrderController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Order/order.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/OrderTakers/ordertakers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/OrderTakers/ordertakers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Run.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ACMEDeliverySystem/UI/Run.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Couriers/CourierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Couriers/CourierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Login/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Login/LoginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Map/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Map/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Map/map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Map/map.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Order/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Order/order.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,54 +30,84 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45442298">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/UI/Order/order.fxml">
-              <provider editor-type-id="JavaFX-Scene-Builder" />
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Models/Intersections.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml">
-              <provider editor-type-id="JavaFX-Scene-Builder" />
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/UI/Order/OrderController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/BusinessReport/BusinessReportUIController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/Couriers/CourierController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/Customers/CustomerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1730#1731#0" expanded="true" />
+                <element signature="e#1809#1810#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
+                <element signature="e#2085#2086#0" expanded="true" />
+                <element signature="e#2270#2271#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/Map/MapController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UI/Map/map.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="134" selection-start-line="25" selection-start-column="134" selection-end-line="25" selection-end-column="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/Order/OrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,25 +155,18 @@
         <option value="$PROJECT_DIR$/src/UI/Customers/businessReportUI.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Customers/CustomerBillsController.java" />
         <option value="$PROJECT_DIR$/src/UI/Business/Report/BusinessReportUIController.java" />
-        <option value="$PROJECT_DIR$/src/UI/Map/map.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/Map/MapController.java" />
         <option value="$PROJECT_DIR$/src/UI/Settings/settingsUI.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Settings/SettingsManager.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/UI/MainController.java" />
-        <option value="$PROJECT_DIR$/src/UI/Login/LoginManager.java" />
         <option value="$PROJECT_DIR$/src/UI/Login/LoginApp.java" />
         <option value="$PROJECT_DIR$/src/UI/Settings/SettingsController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/UI/Login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Models/Courier.java" />
         <option value="$PROJECT_DIR$/src/Models/Customer.java" />
-        <option value="$PROJECT_DIR$/src/UI/Couriers/CourierController.java" />
         <option value="$PROJECT_DIR$/src/UI/Customers/customerUI.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Couriers/couriers.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/Models/OrderTaker.java" />
-        <option value="$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java" />
         <option value="$PROJECT_DIR$/src/UI/Run.java" />
         <option value="$PROJECT_DIR$/src/UI/OrderTakers/ordertakers.fxml" />
         <option value="$PROJECT_DIR$/src/UI/Order/order.fxml" />
@@ -144,14 +174,22 @@
         <option value="$PROJECT_DIR$/src/DataManagement/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/Models/Input.txt" />
         <option value="$PROJECT_DIR$/src/Models/Map.java" />
+        <option value="$PROJECT_DIR$/src/UI/MainController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Login/LoginManager.java" />
+        <option value="$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Couriers/CourierController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Customers/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/UI/Order/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Map/MapController.java" />
+        <option value="$PROJECT_DIR$/src/UI/Map/map.fxml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1273" />
-    <option name="width" value="1294" />
-    <option name="height" value="1417" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="935" />
+    <option name="y" value="92" />
+    <option name="width" value="1586" />
+    <option name="height" value="1128" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -199,6 +237,13 @@
               <item name="Summer Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="BusinessReport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Summer Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Summer Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Couriers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -206,7 +251,21 @@
               <item name="Summer Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Customers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Summer Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Summer Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Summer Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Summer Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Summer Project" type="b2602c69:ProjectViewProjectNode" />
@@ -232,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18505748" />
   </component>
@@ -327,14 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560998732238</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Added Map class&#10;- Added Intersection class&#10;- Added test input file for Map class&#10;- Tried to get data from customerOrder database to show up on the tables&#10;&#10;Things to note:&#10;- I couldn't figure out how to get the dates from the database to show up on the tables yet.&#10;- For some reason, the other columns from the customerOrder database shows up fine on the tables but the delivery_customer_id column is bugging out and is not showing up on the table.">
+      <created>1561077047097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561077047097</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
+    <frame x="935" y="92" width="1586" height="1128" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11486486" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30865008" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -343,7 +409,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8442953" visible="true" weight="0.3217324" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8442953" visible="true" weight="0.41809046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -399,7 +465,8 @@
     <MESSAGE value="- Added a controller to each of the tabs.&#10;- Cleaned up the code a bit&#10;&#10;To do:&#10;- The logout function is there but the logout button is broken, will fix later." />
     <MESSAGE value="- Added Generate Bill for Single Customer UI&#10;- Added Generate Bills for Selected All Customers UI" />
     <MESSAGE value="- Courier Table is now populated with data from database&#10;- Customer Table is now populated with data from database&#10;&#10;Note:&#10;- There was an attempt to populate the Order Taker Table with data but for some reason it is not working. Will work on it more later&#10;- Will also clean up the code later" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Courier Table is now populated with data from database&#10;- Customer Table is now populated with data from database&#10;&#10;Note:&#10;- There was an attempt to populate the Order Taker Table with data but for some reason it is not working. Will work on it more later&#10;- Will also clean up the code later" />
+    <MESSAGE value="- Added Map class&#10;- Added Intersection class&#10;- Added test input file for Map class&#10;- Tried to get data from customerOrder database to show up on the tables&#10;&#10;Things to note:&#10;- I couldn't figure out how to get the dates from the database to show up on the tables yet.&#10;- For some reason, the other columns from the customerOrder database shows up fine on the tables but the delivery_customer_id column is bugging out and is not showing up on the table." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Map class&#10;- Added Intersection class&#10;- Added test input file for Map class&#10;- Tried to get data from customerOrder database to show up on the tables&#10;&#10;Things to note:&#10;- I couldn't figure out how to get the dates from the database to show up on the tables yet.&#10;- For some reason, the other columns from the customerOrder database shows up fine on the tables but the delivery_customer_id column is bugging out and is not showing up on the table." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Models/Business.java">
@@ -415,35 +482,11 @@
     <entry file="file://$PROJECT_DIR$/src/UI/Settings2/SettingsController.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.base/javafx/beans/value/ChangeListener.java" />
     <entry file="file://$PROJECT_DIR$/src/UI/Business/Report/BusinessReportUIController.java" />
-    <entry file="file://$PROJECT_DIR$/src/UI/Map/MapController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/UI/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Customers/CustomerBillsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -506,40 +549,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="37" selection-end-column="133" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/Courier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Customers/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Couriers/CourierController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="25" selection-start-line="25" selection-end-line="68" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -558,13 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -607,42 +613,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" selection-start-line="24" selection-end-line="33" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Order/order.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Run.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,10 +640,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Order/order.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Customers/CustomerBillsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Login/LoginManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding>
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/BusinessReport/BusinessReportUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Couriers/CourierController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Customers/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Order/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="357">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/OrderTakers/OrderTakerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Map/MapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Map/map.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="134" selection-start-line="25" selection-start-column="134" selection-end-line="25" selection-end-column="134" />
         </state>
       </provider>
     </entry>

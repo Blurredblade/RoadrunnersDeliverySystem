@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.*;
 
 import UI.Order.OrderController;
+import UI.OrderTakers.OrderTakerController;
 import UI.Run;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -19,6 +20,8 @@ public class LoginManager {
         this.stage = stage;
     }
 
+    public Scene getScene() { return scene; }
+    public Stage getStage() { return stage; }
     /**
      * Callback method invoked to notify that a user has been authenticated.
      * Will show the main application screen.
@@ -36,16 +39,20 @@ public class LoginManager {
     }
 
     public void showLoginScreen() {
+        //setLoginManagers(); //Rename this
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("login.fxml")
-            );
+            FXMLLoader loader = new FXMLLoader( getClass().getResource("login.fxml") );
             scene.setRoot(loader.load());
             LoginController controller = loader.getController();
             controller.initManager(this);
         } catch (IOException ex) {
             Logger.getLogger(LoginManager.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void setLoginManagers(LoginManager loginManagers) {
+        OrderTakerController ot = new OrderTakerController();
+        ot.setLoginManager(loginManagers);
     }
 
     private void showMainView(String sessionID) throws Exception {

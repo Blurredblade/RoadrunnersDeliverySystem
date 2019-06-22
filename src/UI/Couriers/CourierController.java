@@ -4,6 +4,8 @@ import DataManagement.DatabaseManager;
 import Models.Courier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -35,6 +37,14 @@ public class CourierController {
 
     @FXML
     void initialize(){
+        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Logging out");
+                //loginManager.logout();
+            }
+        });
+
         assert courierTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'couriers.fxml'.";
         colCourierID.setCellValueFactory( new PropertyValueFactory<Courier,Integer>("courierID"));
         colCourierName.setCellValueFactory( new PropertyValueFactory<Courier,String>("courierName"));

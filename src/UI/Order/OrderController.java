@@ -49,6 +49,14 @@ public class OrderController extends Application {
 
     @FXML
     void initialize(){
+        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Logging out");
+                //loginManager.logout();
+            }
+        });
+
         assert orderTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'order.fxml'.";
         // Need to work on the order number col later
         colOrderNum.setCellValueFactory( new PropertyValueFactory<CustomerOrder,Integer>("orderID"));

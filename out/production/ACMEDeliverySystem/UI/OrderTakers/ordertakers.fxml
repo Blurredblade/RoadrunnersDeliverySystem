@@ -10,7 +10,7 @@
 
 
 <!-- Order Takers Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.OrderTakerController">
     <children>
         <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
             <font>
@@ -19,7 +19,7 @@
         </Label>
         <TableView fx:id="orderTakerTable" layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
             <columns>
-
+                <TableColumn fx:id="colOrderTakerNum" prefWidth="75.0" text="[]"/>
                 <TableColumn fx:id="colOrderTakerID" prefWidth="131.0" text="Order Taker #"/>
                 <TableColumn fx:id="colOrderTakerName" prefWidth="639.0" text="Name"/>
             </columns>
