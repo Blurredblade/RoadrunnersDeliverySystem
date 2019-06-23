@@ -8,7 +8,7 @@ public class Customer {
     private boolean isActive;
 
     public Customer(int customer_id, String customer_name, String customer_address, boolean isActive){
-        setID(customer_id);
+        this.customer_id = customer_id;
         setName(customer_name);
         setAddress(customer_address);
         setActive(isActive);
@@ -16,10 +16,6 @@ public class Customer {
 
     public int getID() {
         return customer_id;
-    }
-
-    public void setID(int customer_id) {
-        this.customer_id = customer_id;
     }
 
     public String getName() {

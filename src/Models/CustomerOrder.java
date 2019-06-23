@@ -24,7 +24,7 @@ public class CustomerOrder {
     private OrderStatus status;
 
     public CustomerOrder(int order_id, int package_id, int pickupCustomer, int deliveryCustomer, int orderTaker, int courier, boolean billToDelivery, String specialInstructions, Date pickupTime){
-        this.setID(order_id);
+        this.order_id = order_id;
         this.setPackageID(package_id);
         this.setPickupCustomer(pickupCustomer);
         this.setDeliveryCustomer(deliveryCustomer);
@@ -35,12 +35,45 @@ public class CustomerOrder {
         this.setPickupTime(pickupTime);
     }
 
-    public int getID() {
-        return order_id;
+    public CustomerOrder(
+            int order_id,
+            int package_id,
+            int pickupCustomer,
+            int deliveryCustomer,
+            int orderTaker,
+            int courier,
+            boolean billToDelivery,
+            String specialInstructions,
+            Date pickupTime,
+            Date estimatedDelivery,
+            Date estimatedDeparture,
+            int distance,
+            float price,
+            Date departure,
+            Date pickup,
+            Date delivery,
+            OrderStatus status){
+        this.order_id = order_id;
+        this.setPackageID(package_id);
+        this.setPickupCustomer(pickupCustomer);
+        this.setDeliveryCustomer(deliveryCustomer);
+        this.setCourier(courier);
+        this.setOrderTaker(orderTaker);
+        this.setBillToDelivery(billToDelivery);
+        this.setSpecialInstructions(specialInstructions);
+        this.setPickupTime(pickupTime);
+        this.setEstimatedDelivery(estimatedDelivery);
+        this.setEstimatedDeparture(estimatedDeparture);
+        this.setDistance(distance);
+        this.setPrice(price);
+        this.setDeparture(departure);
+        this.setPickup(pickup);
+        this.setDelivery(delivery);
+        this.setStatus(status);
     }
 
-    public void setID(int order_id) {
-        this.order_id = order_id;
+    public int getID() {
+        return order_id;
     }
 
     public int getPackageID() {

@@ -7,17 +7,13 @@ public class Courier {
     private boolean isActive;
 
     public Courier(int id, String name, boolean isActive){
-        this.setID(id);
+        courier_id = id;
         this.setName(name);
         this.setActive(isActive);
     }
 
     public int getID() {
         return courier_id;
-    }
-
-    public void setID(int courier_id) {
-        this.courier_id = courier_id;
     }
 
     public String getName() {
