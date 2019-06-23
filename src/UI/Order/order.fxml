@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <!-- Order Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
     <children>
-        <Button fx:id="newOrderBtn" layoutX="41.0" layoutY="58.0" mnemonicParsing="false" text="New Order"/>
+        <Button fx:id="newOrderBtn" layoutX="41.0" layoutY="58.0" mnemonicParsing="false" onAction="#newOrder" text="New Order" />
         <Label layoutX="442.0" layoutY="14.0" text="Orders">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="304.0" layoutY="62.0" text="Filter by Status:"/>
-        <ChoiceBox layoutX="394.0" layoutY="58.0" prefWidth="150.0"/>
-        <TableView layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
+        <Label layoutX="304.0" layoutY="62.0" text="Filter by Status:" />
+        <ChoiceBox fx:id="statusSelection" layoutX="394.0" layoutY="58.0" prefWidth="150.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="None" />
+                    <String fx:value="Awaiting Departure" />
+                    <String fx:value="Out For Delivery" />
+                    <String fx:value="Delivered" />
+                    <String fx:value="Canceled" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="None" />
+            </value>
+        </ChoiceBox>
+        <VBox fx:id="tableView" layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
+            <children>
+
+            </children>
+        </VBox>
+        <!--<TableView  layoutX="21.0" layoutY="92.0" prefHeight="322.0" prefWidth="879.0">
             <columns>
                 <TableColumn prefWidth="34.0" text="[]"/>
                 <TableColumn prefWidth="54.0" text="Order #"/>
@@ -30,15 +49,11 @@
                 <TableColumn prefWidth="82.0" text="Courier"/>
                 <TableColumn minWidth="6.0" prefWidth="180.0" text="Estimated Departure"/>
             </columns>
-        </TableView>
-        <Button fx:id="orderInfoBtn" layoutX="21.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Order Info"/>
-        <Button fx:id="printRouteBtn" layoutX="21.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Print Route"/>
-        <Button fx:id="cancelOrderBtn" layoutX="21.0" layoutY="510.0" mnemonicParsing="false" text="Cancel Order"/>
-        <Button fx:id="assignCourierBtn" layoutX="126.0" layoutY="436.0" mnemonicParsing="false" text="Assign Courier"/>
-        <Button fx:id="recordTimesBtn" layoutX="126.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Record Times"/>
-        <Button fx:id="logoutButton" layoutX="843.0" layoutY="601.0" mnemonicParsing="false" text="Logout"/>
-        <ScrollBar layoutX="900.0" layoutY="92.0" orientation="VERTICAL" prefHeight="324.0" prefWidth="14.0"/>
-        <ScrollBar layoutX="21.0" layoutY="416.0" prefHeight="14.0" prefWidth="879.0"/>
+        </TableView>-->
+        <Button fx:id="orderInfoBtn" disable="true" layoutX="21.0" layoutY="436.0" mnemonicParsing="false" onAction="#info" prefHeight="25.0" prefWidth="86.0" text="Order Info" />
+        <Button fx:id="printRouteBtn" disable="true" layoutX="21.0" layoutY="473.0" mnemonicParsing="false" onAction="#printRoute" prefHeight="25.0" prefWidth="86.0" text="Print Route" />
+        <Button fx:id="cancelOrderBtn" disable="true" layoutX="21.0" layoutY="510.0" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order" />
+        <Button fx:id="assignCourierBtn" disable="true" layoutX="126.0" layoutY="436.0" mnemonicParsing="false" onAction="#assignCourier" text="Assign Courier" />
+        <Button fx:id="recordTimesBtn" disable="true" layoutX="126.0" layoutY="473.0" mnemonicParsing="false" onAction="#recordTimes" prefHeight="25.0" prefWidth="94.0" text="Record Times" />
     </children>
 </AnchorPane>
-
