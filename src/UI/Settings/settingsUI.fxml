@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.geometry.Insets?>
-
 <!-- Settings Tab -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://www.w3.org/2001/XInclude" fx:controller="UI.Settings.SettingsController">
     <VBox>
         <StackPane>
@@ -56,10 +48,6 @@
             </columnConstraints>
         </GridPane>
 
-        <StackPane>
-            <!-- Log Out Button -->
-            <Button fx:id="logoutButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Log Out" StackPane.alignment="CENTER_RIGHT"/>
-        </StackPane>
         <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
         </padding>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="2000.0" fx:controller="UI.MainViewController">
+
+    <VBox spacing="10.0">
+        <TabPane xmlns:fx="http://www.w3.org/2001/XInclude" tabClosingPolicy="UNAVAILABLE"
+                 xmlns="http://javafx.com/javafx/8.0.40">
+            <Tab fx:id="ordersTab" text="Orders">
+                <fx:include fx:id="ordersPage" source="Order/order.fxml"/>
+            </Tab>
+            <Tab fx:id="customersTab" text="Customers">
+                <fx:include fx:id="customersPage" source="Customers/customerUI.fxml"/>
+            </Tab>
+            <Tab fx:id="couriersTab" text="Couriers">
+                <fx:include fx:id="couriersPage" source="Couriers/couriers.fxml"/>
+            </Tab>
+            <Tab fx:id="orderTakersTab" text="Order Takers">
+                <fx:include fx:id="orderTakersPage" source="OrderTakers/ordertakers.fxml"/>
+            </Tab>
+            <Tab fx:id="mapTab" text="Map">
+                <fx:include fx:id="mapPage" source="Map/map.fxml"/>
+            </Tab>
+            <Tab fx:id="settingsTab" text="Settings">
+                <fx:include fx:id="settingsPage" source="Settings/settingsUI.fxml"/>
+            </Tab>
+        </TabPane>
+
+        <StackPane prefHeight="-1.0" prefWidth="-1.0">
+            <GridPane>
+                <Label text="Session ID:" GridPane.columnIndex="1"/>
+                <Label fx:id="sessionLabel" text="Undefined" GridPane.columnIndex="2"/>
+                <Button fx:id="logoutButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" GridPane.columnIndex="0" text="Logout"/>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+            </GridPane>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </StackPane>
+    </VBox>
+</StackPane>

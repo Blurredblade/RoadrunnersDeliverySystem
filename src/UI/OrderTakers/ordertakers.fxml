@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
 
 <!-- Order Takers Tab -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.OrderTakerController">
     <children>
         <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
@@ -29,6 +24,5 @@
         <Button fx:id="addOTakersBtn" layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Add Order Takers"/>
         <Button fx:id="editOTakersBtn" layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Edit Order Takers"/>
         <Button fx:id="deleteOTakersBtn" layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers"/>
-        <Button fx:id="logoutButton" layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout"/>
     </children>
 </AnchorPane>

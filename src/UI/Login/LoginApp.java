@@ -1,12 +1,12 @@
 package UI.Login;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
+/** Main application class for the login demo application */
 public class LoginApp extends Application {
     public static void main(String[] args) { launch(args); }
     @Override public void start(Stage stage) throws IOException {
@@ -15,7 +15,6 @@ public class LoginApp extends Application {
         LoginManager loginManager = new LoginManager(scene, stage);
         loginManager.showLoginScreen();
 
-        stage.setTitle("ACME Delivery Service");
         stage.setScene(scene);
         stage.show();
     }

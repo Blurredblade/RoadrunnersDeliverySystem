@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<!-- Map Tab -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<!-- Map Tab -->
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.layout.StackPane?>
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Map.MapController">
     <children>
         <Label layoutX="300.0" layoutY="23.0" text="Map">
@@ -19,7 +15,6 @@
         <ImageView fx:id="mapImage" layoutX="29.0" layoutY="50.0" fitHeight="500.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true"> </ImageView>
         <Button fx:id="openIntersectionBtn" layoutX="718.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Mark Open"/>
         <Button fx:id="closedIntersectionBtn" layoutX="718.0" layoutY="137.0" mnemonicParsing="false" text="Mark Closed"/>
-        <Button fx:id="logoutButton" layoutX="747.0" layoutY="576.0" mnemonicParsing="false" text="Logout"/>
         <Label layoutX="665.0" layoutY="41.0" text="Currently Selected Intersection:"/>
 
 

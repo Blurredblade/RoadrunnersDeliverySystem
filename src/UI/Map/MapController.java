@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -17,17 +16,9 @@ public class MapController {
 
     @FXML private ImageView mapImage;
 
-    @FXML
+    @FXML //This is bugging out, not sure why
     public void initialize(){
         setMapImage();
-
-        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Logging out");
-                //loginManager.logout();
-            }
-        });
     }
 
     public void setMapImage() {

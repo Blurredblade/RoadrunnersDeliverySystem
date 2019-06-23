@@ -1,15 +1,19 @@
 package UI.Settings;
 
-
+/** TESTING
 import DataManagement.DatabaseManager;
 import Models.Business;
-import UI.BusinessReport.BusinessReportUIController;
+ **/
+//import UI.BusinessReport.BusinessReportUIController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -32,7 +36,7 @@ public class SettingsController {
     // Test
     @FXML private TabPane tabPane;
     @FXML private Tab customerTab;
-    @FXML private BusinessReportUIController customerController;
+    //@FXML private BusinessReportUIController customerController;
     @FXML private Tab settingsTab;
     @FXML private SettingsController settingsController;
 
@@ -71,25 +75,19 @@ public class SettingsController {
             }
         });
 
-        // Log Out Button
-        logoutButton.setOnAction(new EventHandler<>() {
-            @Override public void handle(ActionEvent e) {
-                logout();
-            }
-        });
-
+        /** TESTING
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         Business b = q.getBusinessSettings();
+         **/
 
-        //TEST
-        /**
+        /** TESTING
         deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
         deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
         bonusRateField.setText(String.valueOf(b.getBonusRate()));
         bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
         addressField.setText(b.getAddress());
-         **/
-        q = null;
+
+        q = null;**/
     }
 
     public void saveChanges() {
@@ -100,6 +98,7 @@ public class SettingsController {
         String address = addressField.getText();
         String map = mapField.getText();
 
+        /** TESTING
         Business b = new Business(
                 address,
                 deliveryBlockRate,
@@ -111,6 +110,7 @@ public class SettingsController {
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         q.setBusinessSettings(b);
         q = null;
+         **/
     }
 
     public void openFile() {

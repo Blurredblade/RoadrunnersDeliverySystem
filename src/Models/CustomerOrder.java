@@ -3,8 +3,6 @@ package Models;
 import DataManagement.DatabaseManager;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
 
 import java.util.Date;
 

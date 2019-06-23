@@ -1,22 +1,21 @@
 package UI.Order;
 
+/** TESTING
 import DataManagement.DatabaseManager;
-import Models.Courier;
-import Models.CustomerOrder;
-import Models.OrderTaker;
+import Models.CustomerOrder;**/
+
 import UI.Login.LoginManager;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -38,7 +37,7 @@ public class OrderController extends Application {
     @FXML private TableView orderTable;
     public Connection con;
     private Logger logger;
-    private DatabaseManager objDbClass;
+    //private DatabaseManager objDbClass;
 
     @FXML public TableColumn colOrderNum;
     @FXML public TableColumn colDeliveryCust;
@@ -49,14 +48,8 @@ public class OrderController extends Application {
 
     @FXML
     void initialize(){
-        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Logging out");
-                //loginManager.logout();
-            }
-        });
 
+        /** TESTING
         assert orderTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'order.fxml'.";
         // Need to work on the order number col later
         colOrderNum.setCellValueFactory( new PropertyValueFactory<CustomerOrder,Integer>("orderID"));
@@ -73,8 +66,10 @@ public class OrderController extends Application {
         }
         catch(ClassNotFoundException ce){ logger.info(ce.toString()); }
         catch(SQLException ce){ logger.info(ce.toString()); }
+         **/
     }
 
+/** TESTING
     private ObservableList<CustomerOrder> data;
     public void buildData(){
         data = FXCollections.observableArrayList();
@@ -99,6 +94,7 @@ public class OrderController extends Application {
             System.out.println("Error on Building Data");
         }
     }
+    **/
 
     public void initSessionID(final LoginManager loginManager, String sessionID) {
         sessionLabel.setText(sessionID);

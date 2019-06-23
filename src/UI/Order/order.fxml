@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<!-- Order Tab -->
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<!-- Order Tab -->
 <AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
     <children>
         <Button fx:id="newOrderBtn" layoutX="41.0" layoutY="58.0" mnemonicParsing="false" text="New Order"/>
@@ -36,7 +30,6 @@
         <Button fx:id="cancelOrderBtn" layoutX="21.0" layoutY="510.0" mnemonicParsing="false" text="Cancel Order"/>
         <Button fx:id="assignCourierBtn" layoutX="126.0" layoutY="436.0" mnemonicParsing="false" text="Assign Courier"/>
         <Button fx:id="recordTimesBtn" layoutX="126.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Record Times"/>
-        <Button fx:id="logoutButton" layoutX="843.0" layoutY="601.0" mnemonicParsing="false" text="Logout"/>
         <ScrollBar layoutX="900.0" layoutY="92.0" orientation="VERTICAL" prefHeight="324.0" prefWidth="14.0"/>
         <ScrollBar layoutX="21.0" layoutY="416.0" prefHeight="14.0" prefWidth="879.0"/>
     </children>

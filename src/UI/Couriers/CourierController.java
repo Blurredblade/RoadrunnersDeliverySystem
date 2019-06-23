@@ -1,7 +1,10 @@
 package UI.Couriers;
 
+/** TESTING
 import DataManagement.DatabaseManager;
 import Models.Courier;
+ **/
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,13 +31,14 @@ public class CourierController {
 
     public Connection con;
     private Logger logger;
-    private DatabaseManager objDbClass;
+    //private DatabaseManager objDbClass;
 
     @FXML public TableColumn colCourierID;
     @FXML public TableColumn colCourierName;
 
     @FXML
     void initialize(){
+        /** TESTING
         addCourierBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -92,13 +96,7 @@ public class CourierController {
                 }
             }
         });
-        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Logging out");
-                //loginManager.logout();
-            }
-        });
+
 
         assert courierTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'couriers.fxml'.";
         colCourierID.setCellValueFactory( new PropertyValueFactory<Courier,Integer>("courierID"));
@@ -110,8 +108,10 @@ public class CourierController {
         }
         catch(ClassNotFoundException ce){ logger.info(ce.toString()); }
         catch(SQLException ce){ logger.info(ce.toString()); }
+         **/
     }
 
+    /** TESTING
     private ObservableList<Courier> data;
     public void buildData(){
         data = FXCollections.observableArrayList();
@@ -131,5 +131,5 @@ public class CourierController {
             e.printStackTrace();
             System.out.println("Error on Building Data");
         }
-    }
+    }**/
 }

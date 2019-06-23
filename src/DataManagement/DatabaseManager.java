@@ -1,11 +1,10 @@
 package DataManagement;
 
 import Models.*;
-import com.mysql.cj.xdevapi.Result;
 
 import java.sql.*;
-import java.util.Properties;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class DatabaseManager {
     public static class QueryManager{
