@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<!-- Customers Tab -->
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
-<!-- Customers Tab -->
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="UI.Customers.CustomerController">
     <children>
         <Label layoutX="426.0" layoutY="14.0" text="Customers">
@@ -32,7 +26,6 @@
                 prefWidth="91.0" text="Generate Bill"/>
         <Button fx:id="deleteCustbtn" layoutX="147.0" layoutY="414.0" mnemonicParsing="false" text="Delete Customer"/>
         <Button fx:id="allBillBtn" layoutX="147.0" layoutY="454.0" mnemonicParsing="false" text="Generate All Bills"/>
-        <Button fx:id="logoutButton" layoutX="832.0" layoutY="583.0" mnemonicParsing="false" text="Logout"/>
         <CheckBox layoutX="729.0" layoutY="418.0" mnemonicParsing="false" text="Display Inactive Customers"/>
     </children>
 </AnchorPane>
