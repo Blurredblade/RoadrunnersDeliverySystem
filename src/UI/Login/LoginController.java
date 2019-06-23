@@ -15,9 +15,12 @@ public class LoginController {
     @FXML private Button loginButton;
     @FXML private Label errorText;
 
-    public void initialize() {}
+    public void initialize() {
+
+    }
 
     public void initManager(final LoginManager loginManager) {
+        user.requestFocus();
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
                 String sessionID = authorize();
