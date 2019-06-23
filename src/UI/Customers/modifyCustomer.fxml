@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Customers.ModifyCustomerController">
    <children>
-      <Button fx:id="saveChangesBtn" layoutX="157.0" layoutY="279.0" mnemonicParsing="false" text="Save Changes" />
+      <Button fx:id="saveChangesBtn" layoutX="157.0" layoutY="279.0" mnemonicParsing="false" onAction="#update" text="Save Changes" />
       <Button fx:id="cancelBtn" layoutX="337.0" layoutY="279.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Cancel" />
       <Label fx:id="nameLabel" layoutX="179.0" layoutY="147.0" text="Name:" />
       <Label fx:id="addressLabel" layoutX="179.0" layoutY="183.0" text="Address:" />
-      <TextField layoutX="287.0" layoutY="143.0" />
-      <TextField layoutX="287.0" layoutY="179.0" />
+      <TextField fx:id="nameTextField" layoutX="287.0" layoutY="143.0" />
+      <TextField fx:id="addressTextField" layoutX="287.0" layoutY="179.0" />
       <Label fx:id="modifycustomerLabel" layoutX="218.0" layoutY="81.0" text="Modify Customer">
          <font>
             <Font size="18.0" />

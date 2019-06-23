@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -27,9 +28,11 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class CustomerController {
+
     @FXML private Button addCustomerBtn;
     @FXML private Button editCustBtn;
     @FXML private Button singleBillBtn;
@@ -58,8 +61,9 @@ public class CustomerController {
                 try {
                     System.out.print("\nAdding Customer to Database");
                     Stage stage = new Stage();
-                    stage.setScene( new Scene( newCustomer.load() ) );
-                    stage.show();
+                    stage.initOwner( addCustomerBtn.getScene().getWindow() );
+                    stage.setScene( new Scene( (Parent) newCustomer.load() ) );
+                    stage.showAndWait();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -139,7 +143,7 @@ public class CustomerController {
         colCustomerStatus.setCellValueFactory( new PropertyValueFactory<Courier, Boolean>("customerStatus") );
 
 
-
+        //buildData();
 
         objDbClass = new DatabaseManager();
         try{
@@ -150,26 +154,19 @@ public class CustomerController {
         catch(SQLException ce){ logger.info(ce.toString()); }
     }
 
-    private ObservableList<Customer> data;
     public void buildData(){
-        data = FXCollections.observableArrayList();
         try{
-            String SQL = "Select * from customer Order By customer_id";
-            ResultSet rs = con.createStatement().executeQuery(SQL);
-            while(rs.next()){
-                Customer cm = new Customer();
-                //cm.customerID.set(rs.getInt("customer_id"));
-                cm.customerName.set(rs.getString("customer_name"));
-                cm.customerLoc.set(rs.getString("customer_address"));
-                cm.customerStatus.set(rs.getBoolean("isActive"));
-                cm.test();
-                data.add(cm);
-            }
-            customerTable.setItems(data);
+            DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
+
+            customerTable.setItems(FXCollections.observableArrayList(q.getCustomers(true)));
         }
         catch(Exception e){
             e.printStackTrace();
             System.out.println("Error on Building Data");
+
+
         }
+
+
     }
 }

@@ -24,6 +24,7 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class OrderTakerController {
+
     @FXML private Button addOTakersBtn;
     @FXML private Button editOTakersBtn;
     @FXML private Button deleteOTakersBtn;

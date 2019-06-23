@@ -23,6 +23,9 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class CourierController {
+
+    DatabaseManager.QueryManager queryManager;
+
     @FXML private Button addCourierBtn;
     @FXML private Button editCourierBtn;
     @FXML private Button courierReportBtn;
@@ -126,7 +129,7 @@ public class CourierController {
             String SQL = "Select * from courier Order By courier_id";
             ResultSet rs = con.createStatement().executeQuery(SQL);
             while(rs.next()){
-                Courier cm = new Courier();
+                Courier cm = new Courier( );
                 //cm.courierID.set(rs.getInt("courier_id"));
                 cm.courierName.set(rs.getString("courier_name"));
                 cm.courierActive.set(rs.getBoolean("isActive"));

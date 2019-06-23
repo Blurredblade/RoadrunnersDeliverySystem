@@ -9,13 +9,17 @@ public class OrderTaker {
     private String orderTaker_name;
     private boolean isActive;
 
-    /**
+
     public OrderTaker(int orderTaker_id, String orderTaker_name, boolean isActive){
         this.setID(orderTaker_id);
         this.setName(orderTaker_name);
         this.setActive(isActive);
     }
-    **/
+
+    public OrderTaker() {
+
+    }
+
 
     public int getID() { return orderTaker_id; }
     public void setID(int orderTaker_id) {

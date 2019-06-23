@@ -25,7 +25,7 @@ public class CustomerOrder {
     private Date delivery;
     private OrderStatus status;
 
-    /**
+
     public CustomerOrder(int order_id, int package_id, int pickupCustomer, int deliveryCustomer, int orderTaker, int courier, boolean billToDelivery, String specialInstructions, Date pickupTime){
         this.setID(order_id);
         this.setPackageID(package_id);
@@ -37,7 +37,7 @@ public class CustomerOrder {
         this.setSpecialInstructions(specialInstructions);
         this.setPickupTime(pickupTime);
     }
-    **/
+
 
     public int getID() { return order_id; }
     public void setID(int order_id) { this.order_id = order_id; }

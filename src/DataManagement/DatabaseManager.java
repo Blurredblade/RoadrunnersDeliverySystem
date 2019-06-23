@@ -1,8 +1,11 @@
+
 package DataManagement;
 
 import Models.*;
-//import com.mysql.cj.xdevapi.Result;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.sql.*;
 import java.util.Properties;
 import java.util.ArrayList;
@@ -17,8 +20,7 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM COURIER WHERE courier_id = " + ID);
                     rs.next();
-                    // TEST
-                    //c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                    c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -28,17 +30,66 @@ public class DatabaseManager {
             return c;
         }
 
-        public ArrayList<Courier> getCouriers() {
+        public void updateCourier(Courier courier){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("Update COURIER SET courier_name=?, isActive=? WHERE courier_id=?");
+                    statement.setString(1, courier.getName());
+                    statement.setBoolean(2, courier.isActive());
+                    statement.setInt(3, courier.getID());
+                    statement.execute();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+        public void createCourier(Courier courier){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("INSERT INTO COURIER (courier_name, isActive) VALUES (?,?)");
+                    statement.setString(1, courier.getName());
+                    statement.setBoolean(2, courier.isActive());
+                    statement.execute();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+        //returns 2 if connection error, 1 if has associated data, and 0 if successful.
+        public int deleteCourier(int ID){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement orderTest = con.prepareStatement("SELECT * FROM CUSTOMERORDER WHERE courier_id=?;");
+                    orderTest.setInt(1, ID);
+                    ResultSet ordRs = orderTest.executeQuery();
+                    if(ordRs.next()){
+                        return 1;
+                    }
+                    PreparedStatement statement = con.prepareStatement("DELETE FROM COURIER WHERE courier_id=?;");
+                    statement.setInt(1, ID);
+                    statement.execute();
+                    return 0;
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            return 2;
+        }
+
+        public ArrayList<Courier> getCouriers(boolean Active) {
             ArrayList<Courier> couriers = new ArrayList<>();
             Connection con = new DatabaseConnection().Connect();
             if (con != null) {
                 try {
                     Statement statement = con.createStatement();
-                    ResultSet rs = statement.executeQuery("SELECT * FROM COURIER");
+                    ResultSet rs = statement.executeQuery("SELECT * FROM COURIER" + ((Active)?" WHERE isActive = TRUE;":";"));
                     while(rs.next()){
-                        // TEST
-                        //Courier c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
-                        //couriers.add(c);
+                        Courier c = new Courier(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                        couriers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -57,7 +108,7 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMER WHERE customer_id = " + ID);
                     rs.next();
-                    //c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
+                    c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -67,16 +118,47 @@ public class DatabaseManager {
             return c;
         }
 
-        public ArrayList<Customer> getCustomers(){
+        public void updateCustomer(Customer customer){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("Update CUSTOMER SET customer_name=?, customer_address=?, isActive=? WHERE customer_id=?");
+                    statement.setString(1, customer.getName());
+                    statement.setString(2, customer.getAddress());
+                    statement.setBoolean(3, customer.isActive());
+                    statement.setInt(4, customer.getID());
+                    statement.execute();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+        public void createCustomer(Customer customer){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("INSERT INTO CUSTOMER (customer_name, customer_address, isActive) VALUES (?,?,?);");
+                    statement.setString(1, customer.getName());
+                    statement.setString(2, customer.getAddress());
+                    statement.setBoolean(3, customer.isActive());
+                    statement.execute();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+        public ArrayList<Customer> getCustomers(boolean Active){
             ArrayList<Customer> customers = new ArrayList<>();
             Connection con = new DatabaseConnection().Connect();
             if (con != null) {
                 try {
                     Statement statement = con.createStatement();
-                    ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMER");
+                    ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMER" + ((Active)?" WHERE isActive = TRUE;":";"));
                     while(rs.next()){
-                        //Customer c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
-                        //customers.add(c);
+                        Customer c = new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4));
+                        customers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -95,7 +177,7 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM ORDERTAKER WHERE orderTaker_id = " + ID);
                     rs.next();
-                    //o = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                    o = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
                     con.close();
                 }catch(Exception e){
                     System.out.println(e.getMessage());
@@ -111,10 +193,10 @@ public class DatabaseManager {
             if (con != null) {
                 try {
                     Statement statement = con.createStatement();
-                    ResultSet rs = statement.executeQuery("SELECT * FROM ORDERTAKER");
+                    ResultSet rs = statement.executeQuery("SELECT * FROM ORDERTAKER;");
                     while(rs.next()){
-                        //OrderTaker c = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
-                        //orderTakers.add(c);
+                        OrderTaker c = new OrderTaker(rs.getInt(1), rs.getString(2), rs.getBoolean(3));
+                        orderTakers.add(c);
                     }
                     con.close();
                 }catch(Exception e){
@@ -125,17 +207,55 @@ public class DatabaseManager {
             return orderTakers;
         }
 
-
-        public ArrayList<CustomerOrder> getOrders(){
+/*
+        public ArrayList<CustomerOrder> getOrders(int status){
             ArrayList<CustomerOrder> orders = new ArrayList<>();
             Connection con = new DatabaseConnection().Connect();
             if (con != null) {
                 try {
+
                     Statement statement = con.createStatement();
-                    ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMERORDER");
+                    ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMERORDER " +  ((status != -1)?("WHERE order_status = " + status + ";"):";"));
                     while(rs.next()){
-                        //CustomerOrder o = new CustomerOrder(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getBoolean(7), rs.getString(8), rs.getTime(9));
-                        //orders.add(o);
+                        int s = rs.getInt(17);
+                        OrderStatus stat;
+                        switch(s) {
+                            case 0:
+                                stat = OrderStatus.AWAITING_DEPARTURE;
+                                break;
+                            case 1:
+                                stat = OrderStatus.OUT_FOR_DELIVERY;
+                                break;
+                            case 2:
+                                stat = OrderStatus.DELIVERED;
+                                break;
+                            case 3:
+                                stat = OrderStatus.CANCELED;
+                                break;
+                            default:
+                                stat = OrderStatus.CANCELED;
+                                break;
+                        }
+                        CustomerOrder o = new CustomerOrder(
+                                rs.getInt(1),
+                                rs.getInt(2),
+                                rs.getInt(3),
+                                rs.getInt(4),
+                                rs.getInt(5),
+                                rs.getInt(6),
+                                rs.getBoolean(7),
+                                rs.getString(8),
+                                rs.getTime(9),
+                                rs.getTime(10),
+                                rs.getTime(11),
+                                rs.getInt(12),
+                                rs.getFloat(13),
+                                rs.getTime(14),
+                                rs.getTime(15),
+                                rs.getTime(16),
+                                stat
+                        );
+                        orders.add(o);
                     }
                     con.close();
                 }catch(Exception e){
@@ -144,6 +264,50 @@ public class DatabaseManager {
                 }
             }
             return orders;
+        }
+
+ */
+/*
+        public void createOrder(CustomerOrder order){
+            Connection con = new DatabaseConnection().Connect();
+            if (con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("INSERT INTO CUSTOMERORDER (" +
+                            "package_id, pickup_customer_id, delivery_customer_id, order_taker_id," +
+                            "bill_to_delivery, special_instructions, pick_up_time," +
+                            "order_status" +
+                            ") VALUES" +
+                            "(?,?,?,?,?,?,?,?);");
+                    statement.setInt(1, order.getPackageID());
+                    statement.setInt(2, order.getPickupCustomer().getID());
+                    statement.setInt(3, order.getDeliveryCustomer().getID());
+                    statement.setInt(4, order.getOrderTaker().getID());
+                    statement.setBoolean(5, order.isBillToDelivery());
+                    statement.setString(6, order.getSpecialInstructions());
+                    statement.setString(7, order.getPickupTime().toString());
+                    statement.setInt(8, order.getStatus().getValue());
+                    statement.execute();
+                    con.close();
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+ */
+
+        public void cancelOrder(int order_id){
+            Connection con = new DatabaseConnection().Connect();
+            if (con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("Update CUSTOMERORDER SET order_status=3 WHERE order_id=?");
+                    statement.setInt(1, order_id);
+                    statement.execute();
+                    con.close();
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
         }
 
         //returns 0 if user not found, 1 if user found but password doesn't match, and 2 if match
@@ -191,6 +355,21 @@ public class DatabaseManager {
             return -1;
         }
 
+        public void setUserPermissions(String username, String password, int permissions){
+            Connection con = new DatabaseConnection().Connect();
+            if(con != null) {
+                try {
+                    PreparedStatement statement = con.prepareStatement("Update USERCREDENTIALS SET permissions=? WHERE username=? AND pass=?");
+                    statement.setInt(1, permissions);
+                    statement.setString(2, username);
+                    statement.setString(3, password);
+                    statement.execute();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
         public Business getBusinessSettings(){
             Connection con = new DatabaseConnection().Connect();
             if(con != null){
@@ -232,8 +411,8 @@ public class DatabaseManager {
                 }
             }
         }
-    }
 
+    }
 
     static class DatabaseConnection{
         public Connection Connect(){
@@ -242,7 +421,7 @@ public class DatabaseManager {
                 String url = "jdbc:mysql://localhost:3306/acmedelivery";
                 Properties info = new Properties();
                 info.put("user", "root");
-                info.put("password", "");
+                info.put("password", "Assassinking619");
                 return DriverManager.getConnection(url, info);
             }catch(Exception e){
                 System.out.println(e);
@@ -253,7 +432,7 @@ public class DatabaseManager {
 
     // This is here temporarily
     public Connection getConnection() throws ClassNotFoundException, SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/acmedelivery","root","");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/acmedelivery","root","Assassinking619");
     }
 
 }

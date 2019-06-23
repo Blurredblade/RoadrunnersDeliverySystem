@@ -6,13 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="UI.Customers.NewCustomerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Customers.NewCustomerController">
    <children>
-      <Button fx:id="createBtn" layoutX="180.0" layoutY="251.0" mnemonicParsing="false" text="Create" />
+      <Button fx:id="createBtn" layoutX="180.0" layoutY="251.0" mnemonicParsing="false" onAction="#create" text="Create" />
       <Button fx:id="cancelBtn" layoutX="349.0" layoutY="251.0" mnemonicParsing="false" text="Cancel" />
-      <TextField layoutX="300.0" layoutY="188.0" />
-      <TextField layoutX="300.0" layoutY="125.0" />
+      <TextField fx:id="addressTextField" layoutX="300.0" layoutY="188.0" />
+      <TextField fx:id="nameTextField" layoutX="300.0" layoutY="125.0" />
       <Label fx:id="nameLabel" layoutX="182.0" layoutY="129.0" text="Name:" />
       <Label fx:id="addressLabel" layoutX="182.0" layoutY="192.0" text="Address:" />
       <Label fx:id="newCustomerLabel" layoutX="241.0" layoutY="67.0" text="New Customer">

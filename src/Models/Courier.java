@@ -11,13 +11,16 @@ public class Courier {
     private String courier_name;
     private boolean isActive;
 
-    /**
+
     public Courier(int id, String name, boolean isActive){
         this.setID(id);
         this.setName(name);
         this.setActive(isActive);
     }
-     **/
+
+    public Courier() {
+
+    }
 
     public int getID() { return courier_id; }
     public void setID(int courier_id) { this.courier_id = courier_id; }
