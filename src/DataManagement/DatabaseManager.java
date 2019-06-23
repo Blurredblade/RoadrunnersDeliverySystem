@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.Properties;
 import java.util.ArrayList;
 
@@ -217,7 +218,10 @@ public class DatabaseManager {
                     Statement statement = con.createStatement();
                     ResultSet rs = statement.executeQuery("SELECT * FROM CUSTOMERORDER " +  ((status != -1)?("WHERE order_status = " + status + ";"):";"));
                     while(rs.next()){
-                        int s = rs.getInt(17);
+                        int s = rs.getInt("order_status");
+                        if(s == 3 && status == -1){
+                            continue;
+                        }
                         OrderStatus stat;
                         switch(s) {
                             case 0:
@@ -284,6 +288,29 @@ public class DatabaseManager {
                     statement.setString(6, order.getSpecialInstructions());
                     statement.setString(7, order.getPickupTime().toString());
                     statement.setInt(8, order.getStatus().getValue());
+                    statement.execute();
+                    con.close();
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+
+        public void updateOrder(CustomerOrder order){
+            Connection con = new DatabaseConnection().Connect();
+            if (con != null) {
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    PreparedStatement statement = con.prepareStatement("UPDATE CUSTOMERORDER SET " +
+                            ((order.getDeparture() != null)?"departure='" + sdf.format(order.getDeparture()) + "', ":"") +
+                            ((order.getPickup() != null)?"pickup='"+sdf.format(order.getPickup()) + "', ":"")+
+                            ((order.getDelivery() != null)?"delivery='"+sdf.format(order.getDelivery())+"', ":"")+
+                            ((order.getCourier() != null)?"courier="+order.getCourier().getID()+", ":"")+
+                            "order_status=" + order.getStatus().getValue() +
+                            " WHERE order_id=?");
+                    statement.setInt(1, order.getID());
+                    System.out.println(statement.toString());
+
                     statement.execute();
                     con.close();
                 }catch(Exception e){
