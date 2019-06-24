@@ -168,7 +168,7 @@ public class OrderController extends Application {
                 tabPane.getTabs().add(orderTakersTab);
 
             } else if (tabCount == 5) {
-                Tab mapTab = new Tab("Map");
+                Tab mapTab = new Tab("Dijkstra");
                 VBox mapTabVBox = new VBox();
                 mapTabVBox.getChildren().addAll(
                         new Button("Mark Open"),

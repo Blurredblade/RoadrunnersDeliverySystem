@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Map Tab -->
+<!-- Dijkstra Tab -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,69 +18,69 @@
         <Label layoutX="665.0" layoutY="41.0" text="Currently Selected Intersection:"/>
 
 
-        <!-- There's probably a better way to add all of these intersection buttons but optimization is the last thing on mind for now. -->
+        <!-- There's probably a better way toNode add all of these intersection buttons but optimization is the last thing on mind for now. -->
         <!-- Row 1 Buttons -->
-        <Button id="b1" fx:id="b1" layoutX="40.0" layoutY="60.0" mnemonicParsing="false" text="1"/>
-        <Button id="b2" fx:id="b2" layoutX="110.0" layoutY="60.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b3" layoutX="180.0" layoutY="60.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b4" layoutX="250.0" layoutY="60.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b5" layoutX="320.0" layoutY="60.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b6" layoutX="390.0" layoutY="60.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b7" layoutX="460.0" layoutY="60.0" mnemonicParsing="false" text="7"/>
+        <Button id="b1" fx:id="b1" layoutX="40.0" layoutY="60.0" mnemonicParsing="false" text="1" style="-fx-base: green;"/>
+        <Button id="b2" fx:id="b2" layoutX="110.0" layoutY="60.0" mnemonicParsing="false" text="2" style="-fx-base: green;"/>
+        <Button id="b3" fx:id="b3" layoutX="180.0" layoutY="60.0" mnemonicParsing="false" text="3" style="-fx-base: green;"/>
+        <Button id="b4" fx:id="b4" layoutX="250.0" layoutY="60.0" mnemonicParsing="false" text="4" style="-fx-base: green;"/>
+        <Button id="b5" fx:id="b5" layoutX="320.0" layoutY="60.0" mnemonicParsing="false" text="5" style="-fx-base: green;"/>
+        <Button id="b6" fx:id="b6" layoutX="390.0" layoutY="60.0" mnemonicParsing="false" text="6" style="-fx-base: green;"/>
+        <Button id="b7" fx:id="b7" layoutX="460.0" layoutY="60.0" mnemonicParsing="false" text="7" style="-fx-base: green;"/>
 
         <!-- Row 2 Buttons -->
-        <Button fx:id="b8" layoutX="40.0" layoutY="130.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b9" layoutX="110.0" layoutY="130.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b10" layoutX="180.0" layoutY="130.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b11" layoutX="250.0" layoutY="130.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b12" layoutX="320.0" layoutY="130.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b13" layoutX="390.0" layoutY="130.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b14" layoutX="460.0" layoutY="130.0" mnemonicParsing="false" text="7"/>
+        <Button id="b8" fx:id="b8" layoutX="40.0" layoutY="130.0" mnemonicParsing="false" text="8" style="-fx-base: green;"/>
+        <Button id="b9" fx:id="b9" layoutX="110.0" layoutY="130.0" mnemonicParsing="false" text="9" style="-fx-base: green;"/>
+        <Button id="b10" fx:id="b10" layoutX="180.0" layoutY="130.0" mnemonicParsing="false" text="10" style="-fx-base: green;"/>
+        <Button id="b11" fx:id="b11" layoutX="250.0" layoutY="130.0" mnemonicParsing="false" text="11" style="-fx-base: green;"/>
+        <Button id="b12" fx:id="b12" layoutX="320.0" layoutY="130.0" mnemonicParsing="false" text="12" style="-fx-base: green;"/>
+        <Button id="b13" fx:id="b13" layoutX="390.0" layoutY="130.0" mnemonicParsing="false" text="13" style="-fx-base: green;"/>
+        <Button id="b14" fx:id="b14" layoutX="460.0" layoutY="130.0" mnemonicParsing="false" text="14" style="-fx-base: green;"/>
 
         <!-- Row 3 Buttons -->
-        <Button fx:id="b15" layoutX="40.0" layoutY="210.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b16" layoutX="110.0" layoutY="210.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b17" layoutX="180.0" layoutY="210.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b18" layoutX="250.0" layoutY="210.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b19" layoutX="320.0" layoutY="210.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b20" layoutX="390.0" layoutY="210.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b21" layoutX="460.0" layoutY="210.0" mnemonicParsing="false" text="7"/>
+        <Button id="b15" fx:id="b15" layoutX="40.0" layoutY="210.0" mnemonicParsing="false" text="15" style="-fx-base: green;"/>
+        <Button id="b16" fx:id="b16" layoutX="110.0" layoutY="210.0" mnemonicParsing="false" text="16" style="-fx-base: green;"/>
+        <Button id="b17" fx:id="b17" layoutX="180.0" layoutY="210.0" mnemonicParsing="false" text="17" style="-fx-base: green;"/>
+        <Button id="b18" fx:id="b18" layoutX="250.0" layoutY="210.0" mnemonicParsing="false" text="18" style="-fx-base: green;"/>
+        <Button id="b19" fx:id="b19" layoutX="320.0" layoutY="210.0" mnemonicParsing="false" text="19" style="-fx-base: green;"/>
+        <Button id="b20" fx:id="b20" layoutX="390.0" layoutY="210.0" mnemonicParsing="false" text="20" style="-fx-base: green;"/>
+        <Button id="b21" fx:id="b21" layoutX="460.0" layoutY="210.0" mnemonicParsing="false" text="21" style="-fx-base: green;"/>
 
         <!-- Row 4 Buttons -->
-        <Button fx:id="b22" layoutX="40.0" layoutY="290.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b23" layoutX="110.0" layoutY="290.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b24" layoutX="180.0" layoutY="290.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b25" layoutX="250.0" layoutY="290.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b26" layoutX="320.0" layoutY="290.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b27" layoutX="390.0" layoutY="290.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b28" layoutX="460.0" layoutY="290.0" mnemonicParsing="false" text="7"/>
+        <Button id="b22" fx:id="b22" layoutX="40.0" layoutY="290.0" mnemonicParsing="false" text="22" style="-fx-base: green;"/>
+        <Button id="b23" fx:id="b23" layoutX="110.0" layoutY="290.0" mnemonicParsing="false" text="23" style="-fx-base: green;"/>
+        <Button id="b24" fx:id="b24" layoutX="180.0" layoutY="290.0" mnemonicParsing="false" text="24" style="-fx-base: green;"/>
+        <Button id="b25" fx:id="b25" layoutX="250.0" layoutY="290.0" mnemonicParsing="false" text="25" style="-fx-base: green;"/>
+        <Button id="b26" fx:id="b26" layoutX="320.0" layoutY="290.0" mnemonicParsing="false" text="26" style="-fx-base: green;"/>
+        <Button id="b27" fx:id="b27" layoutX="390.0" layoutY="290.0" mnemonicParsing="false" text="27" style="-fx-base: green;"/>
+        <Button id="b28" fx:id="b28" layoutX="460.0" layoutY="290.0" mnemonicParsing="false" text="28" style="-fx-base: green;"/>
 
         <!-- Row 5 Buttons -->
-        <Button fx:id="b29" layoutX="40.0" layoutY="360.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b30" layoutX="110.0" layoutY="360.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b31" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b32" layoutX="250.0" layoutY="360.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b33" layoutX="320.0" layoutY="360.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b34" layoutX="390.0" layoutY="360.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b35" layoutX="460.0" layoutY="360.0" mnemonicParsing="false" text="7"/>
+        <Button id="b29" fx:id="b29" layoutX="40.0" layoutY="360.0" mnemonicParsing="false" text="29" style="-fx-base: green;"/>
+        <Button id="b30" fx:id="b30" layoutX="110.0" layoutY="360.0" mnemonicParsing="false" text="30" style="-fx-base: green;"/>
+        <Button id="b31" fx:id="b31" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="31" style="-fx-base: green;"/>
+        <Button id="b32" fx:id="b32" layoutX="250.0" layoutY="360.0" mnemonicParsing="false" text="32" style="-fx-base: green;"/>
+        <Button id="b33" fx:id="b33" layoutX="320.0" layoutY="360.0" mnemonicParsing="false" text="33" style="-fx-base: green;"/>
+        <Button id="b34" fx:id="b34" layoutX="390.0" layoutY="360.0" mnemonicParsing="false" text="34" style="-fx-base: green;"/>
+        <Button id="b35" fx:id="b35" layoutX="460.0" layoutY="360.0" mnemonicParsing="false" text="35" style="-fx-base: green;"/>
 
         <!-- Row 6 Buttons -->
-        <Button fx:id="b36" layoutX="40.0" layoutY="450.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b37" layoutX="110.0" layoutY="450.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b38" layoutX="180.0" layoutY="450.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b39" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b40" layoutX="320.0" layoutY="450.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b41" layoutX="390.0" layoutY="450.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b42" layoutX="460.0" layoutY="450.0" mnemonicParsing="false" text="7"/>
+        <Button id="b36" fx:id="b36" layoutX="40.0" layoutY="450.0" mnemonicParsing="false" text="36" style="-fx-base: green;"/>
+        <Button id="b37" fx:id="b37" layoutX="110.0" layoutY="450.0" mnemonicParsing="false" text="37" style="-fx-base: green;"/>
+        <Button id="b38" fx:id="b38" layoutX="180.0" layoutY="450.0" mnemonicParsing="false" text="38" style="-fx-base: green;"/>
+        <Button id="b39" fx:id="b39" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" text="39" style="-fx-base: green;"/>
+        <Button id="b40" fx:id="b40" layoutX="320.0" layoutY="450.0" mnemonicParsing="false" text="40" style="-fx-base: green;"/>
+        <Button id="b41" fx:id="b41" layoutX="390.0" layoutY="450.0" mnemonicParsing="false" text="41" style="-fx-base: green;"/>
+        <Button id="b42" fx:id="b42" layoutX="460.0" layoutY="450.0" mnemonicParsing="false" text="42" style="-fx-base: green;"/>
 
         <!-- Row 7 Buttons -->
-        <Button fx:id="b43" layoutX="40.0" layoutY="520.0" mnemonicParsing="false" text="1"/>
-        <Button fx:id="b44" layoutX="110.0" layoutY="520.0" mnemonicParsing="false" text="2"/>
-        <Button fx:id="b45" layoutX="180.0" layoutY="520.0" mnemonicParsing="false" text="3"/>
-        <Button fx:id="b46" layoutX="250.0" layoutY="520.0" mnemonicParsing="false" text="4"/>
-        <Button fx:id="b47" layoutX="320.0" layoutY="520.0" mnemonicParsing="false" text="5"/>
-        <Button fx:id="b48" layoutX="390.0" layoutY="520.0" mnemonicParsing="false" text="6"/>
-        <Button fx:id="b49" layoutX="460.0" layoutY="520.0" mnemonicParsing="false" text="7"/>
+        <Button id="b43" fx:id="b43" layoutX="40.0" layoutY="520.0" mnemonicParsing="false" text="43" style="-fx-base: green;"/>
+        <Button id="b44" fx:id="b44" layoutX="110.0" layoutY="520.0" mnemonicParsing="false" text="44" style="-fx-base: green;"/>
+        <Button id="b45" fx:id="b45" layoutX="180.0" layoutY="520.0" mnemonicParsing="false" text="45" style="-fx-base: green;"/>
+        <Button id="b46" fx:id="b46" layoutX="250.0" layoutY="520.0" mnemonicParsing="false" text="46" style="-fx-base: green;"/>
+        <Button id="b47" fx:id="b47" layoutX="320.0" layoutY="520.0" mnemonicParsing="false" text="47" style="-fx-base: green;"/>
+        <Button id="b48" fx:id="b48" layoutX="390.0" layoutY="520.0" mnemonicParsing="false" text="48" style="-fx-base: green;"/>
+        <Button id="b49" fx:id="b49" layoutX="460.0" layoutY="520.0" mnemonicParsing="false" text="49" style="-fx-base: green;"/>
     </children>
 </AnchorPane>
 

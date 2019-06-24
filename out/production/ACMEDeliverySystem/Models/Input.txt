@@ -1,0 +1,21 @@
+8
+11
+1  Bob&Co
+2  Tom_Pizza
+3  George_Clothing
+4  Papa_Johns
+5  Mary_BookStore
+6  Sally_Groceries
+7  Jane_Shoeware
+8  Alice_Nine
+1  2
+2  3
+3  4
+4  5
+2  6
+2  7
+3  6
+3  7
+6  7
+6  8
+7  8

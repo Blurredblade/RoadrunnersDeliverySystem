@@ -136,7 +136,7 @@ public class MapController {
     }
 
     public void setMapImage() {
-        File file = new File("src/UI/Map/Map.png");
+        File file = new File("src/UI/Dijkstra/Dijkstra.png");
         Image image = new Image(file.toURI().toString());
         mapImage.setImage(image);
     }
