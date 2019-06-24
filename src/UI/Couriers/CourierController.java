@@ -116,7 +116,7 @@ public class CourierController {
     public void buildData(){
         data = FXCollections.observableArrayList();
         try{
-            String SQL = "Select * from courier Order By courier_id";
+            String SQL = "Select * fromNode courier Order By courier_id";
             ResultSet rs = con.createStatement().executeQuery(SQL);
             while(rs.next()){
                 Courier cm = new Courier();

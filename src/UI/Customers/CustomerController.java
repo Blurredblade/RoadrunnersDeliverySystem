@@ -47,7 +47,7 @@ public class CustomerController {
         addCustomerBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                System.out.print("Adding Customer to Database");
+                System.out.print("Adding Customer toNode Database");
             }
         });
 
@@ -63,7 +63,7 @@ public class CustomerController {
         deleteCustbtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                System.out.println("Deleting Customer from Database");
+                System.out.println("Deleting Customer fromNode Database");
             }
         });
 
@@ -120,7 +120,7 @@ public class CustomerController {
     public void buildData(){
         data = FXCollections.observableArrayList();
         try{
-            String SQL = "Select * from customer Order By customer_id";
+            String SQL = "Select * fromNode customer Order By customer_id";
             ResultSet rs = con.createStatement().executeQuery(SQL);
             while(rs.next()){
                 Customer cm = new Customer();

@@ -65,7 +65,7 @@ public class LoginController {
     }
 
 
-    // *** Legacy Authorization, good for testing if the database isn't working, will be removed once the app is ready to be relased. ***
+    // *** Legacy Authorization, good for testing if the database isn't working, will be removed once the app is ready toNode be relased. ***
     private String authorizeLegacy() { return "open".equals(user.getText()) && "sesame".equals(password.getText()) ? generateSessionID() : null; }
     private static int LegacySessionID = 0;
     private String LegacyGenerateSessionID() {

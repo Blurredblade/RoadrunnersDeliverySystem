@@ -18,7 +18,7 @@ public class LoginManager {
     }
 
     /**
-     * Callback method invoked to notify that a user has been authenticated.
+     * Callback method invoked toNode notify that a user has been authenticated.
      * Will show the main application screen.
      */
     public void authenticated(String sessionID) {
@@ -26,7 +26,7 @@ public class LoginManager {
     }
 
     /**
-     * Callback method invoked to notify that a user has logged out of the main application.
+     * Callback method invoked toNode notify that a user has logged out of the main application.
      * Will show the login application screen.
      */
     public void logout() {

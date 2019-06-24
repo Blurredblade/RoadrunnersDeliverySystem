@@ -51,7 +51,7 @@ public class OrderController extends Application {
 
         /** TESTING
         assert orderTable != null : "fx:id=\"tableview\" was not injected: check your FXML file 'order.fxml'.";
-        // Need to work on the order number col later
+        // Need toNode work on the order number col later
         colOrderNum.setCellValueFactory( new PropertyValueFactory<CustomerOrder,Integer>("orderID"));
         colDeliveryCust.setCellValueFactory( new PropertyValueFactory<CustomerOrder, Integer>("deliveryCustID"));
         colPickUpCust.setCellValueFactory( new PropertyValueFactory<CustomerOrder, Integer>("pickUpCustID"));
@@ -74,7 +74,7 @@ public class OrderController extends Application {
     public void buildData(){
         data = FXCollections.observableArrayList();
         try{
-            String SQL = "Select * from customerorder Order By order_id";
+            String SQL = "Select * fromNode customerorder Order By order_id";
             ResultSet rs = con.createStatement().executeQuery(SQL);
             while(rs.next()){
                 CustomerOrder cm = new CustomerOrder();
