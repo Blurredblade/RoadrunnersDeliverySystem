@@ -24,10 +24,6 @@ public class MainViewController {
                 loginManager.logout();
             }
         });
-
-        // Map Test Run Here!!!!
-        Map mapTest = new Map();
-        mapTest.findshortestPath(10, 15);
     }
 
 }

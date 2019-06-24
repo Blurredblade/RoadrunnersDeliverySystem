@@ -2,13 +2,16 @@ package Models;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class DirectedGraph {
     static int NodeNum = 1;
-    private HashMap<Integer, ArrayList<DirectedGraphEdge>> adjList = new HashMap();
+    private HashMap<Integer, ArrayList<DirectedGraphEdge>> adjList = new HashMap<Integer, ArrayList<DirectedGraphEdge>>();
+    private HashMap<Integer, ArrayList<DirectedGraphEdge>> adjListBackup = new HashMap<Integer, ArrayList<DirectedGraphEdge>>();
+    ArrayList<Integer> removedIntersections = new ArrayList<Integer>(); // List of removed interseections
 
     // Create an Adjacency list for calculation
     public DirectedGraph(String file) throws IOException { generateEdges(file); }
@@ -43,19 +46,20 @@ public class DirectedGraph {
     // Remove an Intersection
     public void removeIntersection(int node) { //remove Node
         if (adjList.containsKey(node)) {
-            //adjList.entrySet().removeIf(e -> e.getValue().equals("6"));
-            /**
-            Object[] arr = adjList.get(node).toArray();
-            for (int f = 0; f < arr.length; f++) {
-                System.out.println(arr[f] + " " +node);
-                adjList.remove(arr[f], node);
-            };
-             **/
-            //System.out.println("TEEEST: " + adjList.get(node));
+            removedIntersections.add(node);
             adjList.remove(node);
         } else {
             System.out.println("Sorry, that intersection does not exist.");
         }
+    }
+
+    // Open an intersection
+    public void openIntersection(int node) {
+        removedIntersections.remove(Integer.toString(node));
+        for (int i = 0; i < removedIntersections.size(); i++) {
+            adjList.remove(i);
+        }
+
     }
 
     // Create Graph Edges
@@ -175,7 +179,18 @@ public class DirectedGraph {
                 }
             }
         } catch (IOException e) { e.printStackTrace(); }
+
+        deepClone(adjList, adjListBackup); // Make an adjList backup (original, backup)
     }
+
+    // Deep Clone a Hash map
+    public HashMap<Integer, ArrayList<DirectedGraphEdge>> deepClone(HashMap<Integer, ArrayList<DirectedGraphEdge>> original, HashMap<Integer, ArrayList<DirectedGraphEdge>> backup) {
+        for (HashMap.Entry<Integer, ArrayList<DirectedGraphEdge>> entry : original.entrySet()) {
+            backup.put(entry.getKey(), new ArrayList<DirectedGraphEdge>(entry.getValue())); // Or whatever List implementation you'd like here.
+        }
+        return backup;
+    }
+
 
     // Add Edge toNode Graph
     public void addEdge(DirectedGraphEdge newEdge) {

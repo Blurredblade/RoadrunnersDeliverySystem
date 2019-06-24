@@ -5,8 +5,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Map {
+    DirectedGraph graph;
+
     public void findshortestPath(int source, int destination) {
-        DirectedGraph graph;
+
         String file = "src/Models/Intersection.csv";
         try {
             graph = new DirectedGraph(file);
@@ -47,7 +49,7 @@ public class Map {
     }
 
     // Price calculated for the round trip from A to B
-    private double price(int distance) {
+    public double price(int distance) {
         DecimalFormat df = new DecimalFormat("#.##");
         double price = 0.7 * distance;
         String formatted = df.format(price);
@@ -55,10 +57,20 @@ public class Map {
     }
 
     // Assuming each block takes an hour to go through from HQ to destination
-    private double estDeliveryTime(int distance) {
+    public double estDeliveryTime(int distance) {
         double estTime = 1 * distance;
         return estTime;
     }
 
+    public void closeIntersection(int node) {
+        graph.removeIntersection(node);
+        System.out.println("Removed intersection #" + node);
+    }
+
+    public void openIntersection(int node) {
+        graph.openIntersection(node);
+        System.out.println("Opening intersection #" + node);
+    }
+    public void printMapToConsole() { System.out.println(graph); }
 
 }
