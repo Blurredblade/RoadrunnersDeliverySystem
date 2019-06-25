@@ -2,16 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.NewOrder.NewOrderController">
-   <HBox alignment="TOP_CENTER" layoutX="124.0" layoutY="80.0">
+   <HBox alignment="TOP_CENTER" layoutX="116.0" layoutY="78.0">
       <children>
          <Label text="Pickup Customer:">
             <HBox.margin>
@@ -21,42 +23,23 @@
                <Insets right="5.0" />
             </padding>
          </Label>
-         <ChoiceBox fx:id="Pickup1">
-            <padding>
-               <Insets left="150.0" />
-            </padding>
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </ChoiceBox>
+         <ComboBox fx:id="PickupSelection" prefHeight="25.0" prefWidth="220.0" promptText="Select a Pickup Customer" />
       </children>
    </HBox>
-   <HBox layoutX="122.0" layoutY="115.0">
+   <HBox layoutX="115.0" layoutY="113.0">
       <children>
           <Label text="Delivery Customer:">
             <HBox.margin>
                <Insets right="50.0" top="3.0" />
             </HBox.margin>
          </Label>
-          <ChoiceBox fx:id="Pickup">
-            <padding>
-               <Insets left="150.0" />
-            </padding>
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
-         </ChoiceBox>
+         <ComboBox fx:id="DeliverySelection" prefHeight="25.0" prefWidth="220.0" promptText="Select a Delivery Customer" />
       </children>
    </HBox>
     <Label layoutX="256.0" layoutY="14.0" text="New Order" />
-    <Button layoutX="238.0" layoutY="157.0" text="New Customer" />
-    <Label layoutX="107.0" layoutY="446.0" text="Bill To:" />
-    <RadioButton fx:id="del" layoutX="122.0" layoutY="493.0">
-    </RadioButton>
-    <RadioButton fx:id="pick" layoutX="69.0" layoutY="485.0">
-    </RadioButton>
-    <Button layoutX="201.0" layoutY="480.0" onAction="#Create" text="Create" />
-    <Button layoutX="307.0" layoutY="480.0" onAction="#Cancel" text="Cancel" />
+    <Button layoutX="238.0" layoutY="157.0" onAction="#newCustomer" text="New Customer" />
+    <Button layoutX="207.0" layoutY="557.0" onAction="#Create" text="Create" />
+    <Button layoutX="313.0" layoutY="557.0" onAction="#Cancel" text="Cancel" />
    <HBox layoutX="179.0" layoutY="202.0">
       <children>
           <Label text="Pickup Time:">
@@ -74,9 +57,29 @@
                <Insets right="50.0" />
             </HBox.margin>
          </Label>
-          <TextArea fx:id="SpInstructions" prefHeight="181.0" prefWidth="267.0" promptText="Enter special instructions here" wrapText="true" />
+          <TextArea fx:id="SpecialInstructions" prefHeight="181.0" prefWidth="267.0" promptText="Enter special instructions here" wrapText="true" />
       </children>
    </HBox>
+   <VBox layoutX="253.0" layoutY="449.0">
+      <children>
+          <Label text="Bill To:">
+            <padding>
+               <Insets bottom="10.0" />
+            </padding>
+         </Label>
+          <RadioButton fx:id="pick" selected="true" text="Delivery">
+            <padding>
+               <Insets bottom="10.0" />
+            </padding>
+            <toggleGroup>
+               <ToggleGroup fx:id="billTo" />
+            </toggleGroup>
+         </RadioButton>
+          <RadioButton fx:id="del" text="Pickup" toggleGroup="$billTo">
+    </RadioButton>
+      </children>
+   </VBox>
+   <ComboBox fx:id="timeSelection" layoutX="409.0" layoutY="202.0" prefHeight="25.0" prefWidth="67.0" />
    <padding>
       <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
    </padding>

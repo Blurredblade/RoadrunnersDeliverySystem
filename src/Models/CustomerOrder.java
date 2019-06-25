@@ -33,6 +33,7 @@ public class CustomerOrder {
         this.setBillToDelivery(billToDelivery);
         this.setSpecialInstructions(specialInstructions);
         this.setPickupTime(pickupTime);
+        this.setStatus(OrderStatus.AWAITING_DEPARTURE);
     }
 
     public CustomerOrder(
@@ -110,7 +111,7 @@ public class CustomerOrder {
 
     public void setOrderTaker(int orderTaker) {
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
-        this.orderTaker = q.getOrderTaker(orderTaker);
+        this.orderTaker = q.getOrderTaker(orderTaker, false);
         q = null;
     }
 

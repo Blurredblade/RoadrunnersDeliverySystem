@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Customers.EditCustomer.EditCustomerController">
+    <children>
+        <Button fx:id="saveChangesBtn" layoutX="158.0" layoutY="294.0" mnemonicParsing="false" onAction="#save" text="Save Changes" />
+        <Button fx:id="cancelBtn" layoutX="338.0" layoutY="294.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="90.0" text="Cancel" />
+        <Label fx:id="nameLabel" layoutX="185.0" layoutY="163.0" text="Name:" />
+        <Label fx:id="addressLabel" layoutX="185.0" layoutY="199.0" text="Address:" />
+        <TextField fx:id="name" layoutX="293.0" layoutY="159.0" />
+        <TextField fx:id="address" layoutX="293.0" layoutY="195.0" />
+        <Label fx:id="modifycustomerLabel" layoutX="224.0" layoutY="81.0" text="Modify Customer">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="active" layoutX="379.0" layoutY="246.0" mnemonicParsing="false" text="Active" />
+    </children>
+</AnchorPane>

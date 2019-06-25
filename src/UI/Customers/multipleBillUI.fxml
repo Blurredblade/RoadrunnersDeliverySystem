@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="231.0" fx:controller="UI.Business.Report.BusinessReportUIController">
+<StackPane xmlns:fx="http://javafx.com/fxml" prefWidth="231.0" fx:controller="UI.Customers.CustomerBillsController">
     <StackPane>
         <VBox>
             <StackPane>
@@ -21,7 +21,7 @@
 
                 <GridPane hgap="10" GridPane.rowIndex="4" >
                     <!-- BUTTONS -->
-                    <Button fx:id="createButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Create" GridPane.columnIndex="0"/>
+                    <Button fx:id="createButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="CreateMultiple" GridPane.columnIndex="0"/>
                     <Button fx:id="cancelButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" text="Cancel" GridPane.columnIndex="1"/>
 
                     <!-- UI Constraints -->

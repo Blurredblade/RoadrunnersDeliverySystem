@@ -5,7 +5,8 @@ create table if not exists acmedelivery.Business(
     deliveryBlockRate float,
     deliveryBase float,
     bonusRate float,
-    bonusGracePeriod int
+    bonusGracePeriod int,
+    courierSpeed int
 );
 
 create table if not exists acmedelivery.Courier(
@@ -52,44 +53,26 @@ create table if not exists acmedelivery.OrderTaker(
     primary key(orderTaker_id)
 );
 
+create table if not exists acmedelivery.Intersection(
+    intersection_id int auto_increment,
+    intName varchar(20),
+    northInt_id int,
+    eastInt_id int,
+    southInt_id int,
+    westInt_id int,
+    north tinyint,
+    east tinyint,
+    south tinyint,
+    west tinyint,
+    closed tinyint,
+    primary key(intersection_id)
+);
+
 create table if not exists acmedelivery.UserCredentials(
 	user_id int auto_increment,
     username varchar(256),
     pass varchar(256),
     permissions int,
+    ordertaker_id int(11),
     primary key(user_id)
 );
-
-insert into acmedelivery.Customer (customer_name, customer_address, isActive) Values  
-("Bickers & Bickers", "1st Ave and D Street", 1),
-("Slaughter & Slaughter", "2nd Ave and B Street", 1),
-("Payne & Fears", "2nd Ave and F Street", 1),
-("Dewey, Cheatum & Howe", "3rd Ave and C Street", 1);
-
-insert into acmedelivery.Business (address, deliveryBlockRate, deliveryBase, bonusRate, bonusGracePeriod) Values  
-("4th Ave and D Street", 2, 10, 2, 5);
-
-insert into acmedelivery.Courier (courier_name, isActive) Values  
-("Jack Sprat", 1),
-("Peter Pumkin", 1),
-("Jack Candle", 1);
-
-insert into acmedelivery.OrderTaker (orderTaker_name, isActive) Values  
-("Larry Ron", 1),
-("Andy Harbert", 1),
-("Tony Pizza", 1);
-
-insert into acmedelivery.UserCredentials (user_id, username, pass, permissions) Values  
-(0, "admin", "password", 1);
-
-insert into acmedelivery.UserCredentials (username, pass, permissions) Values  
-("larry@gmail.com", "pass1234", 0),
-("andy.harbert@oc.edu", "roadrunners<3", 0),
-("tizza@tonyspizzapalace.net", "pizza", 0);
-
-insert into acmedelivery.CustomerOrder(
-	package_id, pickup_customer_id, delivery_customer_id, order_taker_id, 
-	courier_id, bill_to_delivery, special_instructions, pick_up_time, estimated_delivery, 
-	estimated_departure, distance, price, departure, pickup, delivery, route, order_status
-    )Values  
-(1, 1, 2, 1, null, 0, "Leave on front porch", "2020-06-03 12:00", null, null, null, null, null, null, null, null, 0);

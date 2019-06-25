@@ -55,5 +55,6 @@
         <Button fx:id="cancelOrderBtn" disable="true" layoutX="21.0" layoutY="510.0" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order" />
         <Button fx:id="assignCourierBtn" disable="true" layoutX="126.0" layoutY="436.0" mnemonicParsing="false" onAction="#assignCourier" text="Assign Courier" />
         <Button fx:id="recordTimesBtn" disable="true" layoutX="126.0" layoutY="473.0" mnemonicParsing="false" onAction="#recordTimes" prefHeight="25.0" prefWidth="94.0" text="Record Times" />
+      <Button fx:id="newOrderBtn1" layoutX="780.0" layoutY="58.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
     </children>
 </AnchorPane>

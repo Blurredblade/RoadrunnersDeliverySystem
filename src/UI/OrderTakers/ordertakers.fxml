@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- OrderTakers Tab -->
+
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<!-- Order Takers Tab -->
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Order.OrderController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.OrderTakers.OrderTakerController">
     <children>
-        <Label layoutX="418.0" layoutY="30.0" text="Order Takers">
+        <Label layoutX="367.0" layoutY="22.0" text="OrderTakers">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <TableView layoutX="40.0" layoutY="102.0" prefHeight="266.0" prefWidth="846.0">
+        <Button fx:id="addOrderTakerBtn" layoutX="79.0" layoutY="49.0" mnemonicParsing="false" onAction="#newOrderTaker" text="New OrderTaker" />
+        <TableView fx:id="OrderTakerTable" layoutX="81.0" layoutY="80.0" prefHeight="294.0" prefWidth="693.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="[]"/>
-                <TableColumn prefWidth="131.0" text="Order Taker #"/>
-                <TableColumn prefWidth="639.0" text="Name"/>
+
             </columns>
         </TableView>
-        <ScrollBar layoutX="886.0" layoutY="102.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="14.0"/>
-        <ScrollBar layoutX="40.0" layoutY="368.0" prefHeight="14.0" prefWidth="846.0"/>
-        <Button fx:id="addOTakersBtn" layoutX="158.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Add Order Takers"/>
-        <Button fx:id="editOTakersBtn" layoutX="402.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Edit Order Takers"/>
-        <Button fx:id="deleteOTakersBtn" layoutX="615.0" layoutY="442.0" mnemonicParsing="false" text="Delete Order Takers"/>
-        <Button fx:id="logoutButton" layoutX="808.0" layoutY="575.0" mnemonicParsing="false" text="Logout"/>
+        <Button fx:id="editOrderTakerBtn" layoutX="81.0" layoutY="387.0" mnemonicParsing="false" onAction="#editOrderTaker" text="Edit Order Taker" />
+        <Button fx:id="deleteOrderTakerbtn" layoutX="197.0" layoutY="387.0" mnemonicParsing="false" onAction="#deleteOrderTaker" text="Delete Order Taker" />
+        <CheckBox fx:id="inactiveOrderTakers" layoutX="602.0" layoutY="391.0" mnemonicParsing="false" onAction="#toggle" text="Display Inactive OrderTakers" />
+        <Button layoutX="683.0" layoutY="49.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="25.0" prefWidth="91.0" text="Refresh" />
     </children>
 </AnchorPane>

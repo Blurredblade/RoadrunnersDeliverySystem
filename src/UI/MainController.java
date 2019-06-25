@@ -2,6 +2,7 @@ package UI;
 
 import UI.Customers.CustomerController;
 import UI.Login.LoginManager;
+import UI.Order.OrderController;
 import UI.Settings.SettingsController;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -33,11 +34,14 @@ public class MainController {
 
     // Button
     @FXML private Button logoutButton;
-
+    @FXML private OrderController ordersPageController;
     private LoginManager loginManager;
     private Stage stage;
+    private int user_id;
+
 
     public void init() {
+        ordersPageController.setParentController(this);
         tabPane.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) -> {
             switch(newValue.toString()) {
                 case "ordersTab":
@@ -64,5 +68,13 @@ public class MainController {
             }
         });
          **/
+    }
+
+    public void setUID(int user_id){
+        this.user_id = user_id;
+    }
+
+    public int getUID(){
+        return this.user_id;
     }
 }

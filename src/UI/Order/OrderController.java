@@ -3,6 +3,9 @@ package UI.Order;
 import DataManagement.DatabaseManager;
 import Models.CustomerOrder;
 import UI.Login.LoginManager;
+import UI.MainController;
+import UI.Order.AssignCourier.AssignCourierController;
+import UI.Order.NewOrder.NewOrderController;
 import UI.Order.OrderInfo.OrderInfoController;
 import UI.Order.RecordTimes.RecordTimesController;
 import javafx.application.Application;
@@ -47,6 +50,8 @@ public class OrderController {
     @FXML private ChoiceBox statusSelection;
     @FXML private VBox tableView;
 
+    MainController parentController;
+
     public void initialize(){
         try {
             statusSelection.setOnAction(new EventHandler<ActionEvent>(){
@@ -69,6 +74,9 @@ public class OrderController {
                     if (obs.getValue().getStatus() != OrderStatus.AWAITING_DEPARTURE) {
                         cancelOrderBtn.disableProperty().setValue(true);
                         assignCourierBtn.disableProperty().setValue(true);
+                    }
+                    if(obs.getValue().getCourier() == null){
+                        recordTimesBtn.disableProperty().setValue(true);
                     }
                 }
             });
@@ -96,10 +104,16 @@ public class OrderController {
         try {
             Stage stage = new Stage();
             stage.setTitle("ACME Delivery Service - New Order");
-            stage.setScene(new Scene(newOrderPage.load()));
+            AnchorPane flowPane = newOrderPage.load();
+            NewOrderController controller = newOrderPage.getController();
+            controller.setUID(parentController.getUID());
+            stage.setScene(new Scene(flowPane));
             stage.setResizable(false);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
+            stage.setOnHiding((c)->
+                    refreshTable()
+            );
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -107,7 +121,6 @@ public class OrderController {
 
     @FXML
     public void info(){
-        /* TODO */
         FXMLLoader orderInfoPage = new FXMLLoader(getClass().getResource("../Order/OrderInfo/orderInfo.fxml"));
         try {
             Stage stage = new Stage();
@@ -119,9 +132,9 @@ public class OrderController {
             stage.setResizable(false);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
-            stage.setOnCloseRequest((c)->{
-                System.out.println("Closing");
-            });
+            stage.setOnHiding((c)->
+                refreshTable()
+            );
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -129,8 +142,23 @@ public class OrderController {
 
     @FXML
     public void assignCourier(){
-        /* TODO */
-        System.out.println("assign courier");
+        FXMLLoader assignCourierPage = new FXMLLoader(getClass().getResource("../Order/AssignCourier/assignCourier.fxml"));
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("ACME Delivery Service - Assign Courier");
+            AnchorPane flowPane = assignCourierPage.load();
+            AssignCourierController controller = assignCourierPage.getController();
+            controller.setOrder(getTable().getSelectionModel().getSelectedItem());
+            stage.setScene(new Scene(flowPane));
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.show();
+            stage.setOnHiding((c)->
+                    refreshTable()
+            );
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @FXML
@@ -141,7 +169,6 @@ public class OrderController {
 
     @FXML
     public void recordTimes(){
-        /* TODO */
         FXMLLoader newOrderPage = new FXMLLoader(getClass().getResource("../Order/RecordTimes/recordTimes.fxml"));
         try {
             Stage stage = new Stage();
@@ -153,10 +180,12 @@ public class OrderController {
             stage.setResizable(false);
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
+            stage.setOnHiding((c)->
+                    refreshTable()
+            );
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        System.out.println("record times");
     }
 
     @FXML
@@ -176,12 +205,18 @@ public class OrderController {
         }
     }
 
+    @FXML
     private void refreshTable(){
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         ArrayList<CustomerOrder> orders = q.getOrders(statusSelection());
 
         getTable().getItems().clear();
         getTable().getItems().addAll(orders);
+        orderInfoBtn.disableProperty().setValue(true);
+        assignCourierBtn.disableProperty().setValue(true);
+        printRouteBtn.disableProperty().setValue(true);
+        recordTimesBtn.disableProperty().setValue(true);
+        cancelOrderBtn.disableProperty().setValue(true);
     }
 
     private int statusSelection(){
@@ -335,5 +370,9 @@ public class OrderController {
         orderTable.getItems().addAll(orders);
 
         tableView.getChildren().add(orderTable);
+    }
+
+    public void setParentController(MainController m){
+        this.parentController = m;
     }
 }

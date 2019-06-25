@@ -23,8 +23,8 @@ public class LoginManager {
      * Callback method invoked to notify that a user has been authenticated.
      * Will show the main application screen.
      */
-    public void authenticated(String sessionID) throws Exception {
-        showMainView(sessionID);
+    public void authenticated(String sessionID, int user_id) throws Exception {
+        showMainView(sessionID, user_id);
     }
 
     /**
@@ -48,8 +48,9 @@ public class LoginManager {
         }
     }
 
-    private void showMainView(String sessionID) throws Exception {
+    private void showMainView(String sessionID, int user_id) throws Exception {
         Run mainUI = new Run();
+        mainUI.setUID(user_id);
         mainUI.start(stage);
         /**
         try {

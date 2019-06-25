@@ -26,7 +26,8 @@ public class LoginController {
                 String sessionID = authorize();
                 if (sessionID != null) {
                     try {
-                        loginManager.authenticated(sessionID);
+                        DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
+                        loginManager.authenticated(sessionID, q.getUserID(user.getText(), password.getText()));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

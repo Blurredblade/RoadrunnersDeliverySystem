@@ -71,6 +71,12 @@ public class RecordTimesController implements Initializable{
         order.setDeparture(getTime());
         order.setStatus(OrderStatus.OUT_FOR_DELIVERY);
         q.updateOrder(order);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Departure time recorded");
+        alert.setHeaderText(null);
+        alert.setGraphic(null);
+        alert.setContentText("Successfully recorded departure time(" + order.getDeparture().toString() + ") for order #" + order.getID());
+        alert.showAndWait();
         RefreshButtons();
     }
 
@@ -79,6 +85,12 @@ public class RecordTimesController implements Initializable{
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         order.setPickup(getTime());
         q.updateOrder(order);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Pickup time recorded");
+        alert.setHeaderText(null);
+        alert.setGraphic(null);
+        alert.setContentText("Successfully recorded pickup time(" + order.getPickup().toString() + ") for order #" + order.getID());
+        alert.showAndWait();
         RefreshButtons();
     }
 
@@ -88,6 +100,12 @@ public class RecordTimesController implements Initializable{
         order.setDelivery(getTime());
         order.setStatus(OrderStatus.DELIVERED);
         q.updateOrder(order);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Delivery time recorded");
+        alert.setHeaderText(null);
+        alert.setGraphic(null);
+        alert.setContentText("Successfully recorded delivery time(" + order.getDelivery().toString() + ") for order #" + order.getID());
+        alert.showAndWait();
         RefreshButtons();
     }
 

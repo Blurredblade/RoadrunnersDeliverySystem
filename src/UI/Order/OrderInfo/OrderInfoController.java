@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.converter.DateTimeStringConverter;
 import java.text.SimpleDateFormat;
 import javafx.scene.control.*;
@@ -44,6 +45,12 @@ public class OrderInfoController {
         Platform.runLater(()->{
             if(order == null){
                 Stage stage = (Stage)title.getScene().getWindow();
+                stage.fireEvent(
+                        new WindowEvent(
+                                stage,
+                                WindowEvent.WINDOW_CLOSE_REQUEST
+                        )
+                );
                 stage.close();
             }
             SetLabels();
@@ -76,7 +83,7 @@ public class OrderInfoController {
         );
 
         billTo.setText(
-                (order.getPickup() != null) ? (order.isBillToDelivery()) ? "Delivery" : "Pickup" : NotFound()
+                (order.isBillToDelivery()) ? "Delivery" : "Pickup"
         );
 
         packageID.setText(
@@ -115,7 +122,7 @@ public class OrderInfoController {
         );
 
         specialInstructions.setText(
-                (order.getSpecialInstructions() != null)? order.getSpecialInstructions() : NotFound()
+                (order.getSpecialInstructions() != null)? (order.getSpecialInstructions().equals(""))? order.getSpecialInstructions() : "None" : NotFound()
         );
 
         estimatedDelivery.setText(

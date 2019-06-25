@@ -7,12 +7,23 @@ public class Business {
     private float bonusRate;
     private int bonusGracePeriod;
 
-    public Business(String address, float dBlockRate, float dBase, float bRate, int bGracePeriod){
+    public float getCourierSpeed() {
+        return courierSpeed;
+    }
+
+    public void setCourierSpeed(float courierSpeed) {
+        this.courierSpeed = courierSpeed;
+    }
+
+    private float courierSpeed;
+
+    public Business(String address, float dBlockRate, float dBase, float bRate, int bGracePeriod, float courierSpeed){
         setAddress(address);
         setDeliveryBlockRate(dBlockRate);
         setDeliveryBase(dBase);
         setBonusRate(bRate);
         setBonusGracePeriod(bGracePeriod);
+        setCourierSpeed(courierSpeed);
     }
 
     public String getAddress() {

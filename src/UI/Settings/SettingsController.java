@@ -23,8 +23,8 @@ public class SettingsController {
     @FXML private TextField bonusGracePeriodField;
     @FXML private TextField addressField;
     @FXML private TextField mapField;
+    @FXML private TextField courierSpeed;
 
-    @FXML private Button logoutButton;
     @FXML private Button saveButton;
     @FXML private Button openFileButton;
     @FXML private Button generateButton;
@@ -71,24 +71,18 @@ public class SettingsController {
             }
         });
 
-        // Log Out Button
-        logoutButton.setOnAction(new EventHandler<>() {
-            @Override public void handle(ActionEvent e) {
-                logout();
-            }
-        });
-
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
         Business b = q.getBusinessSettings();
 
         //TEST
-        /**
+
         deliveryBaseField.setText(String.valueOf(b.getDeliveryBase()));
         deliveryBlockRateField.setText(String.valueOf(b.getDeliveryBlockRate()));
         bonusRateField.setText(String.valueOf(b.getBonusRate()));
         bonusGracePeriodField.setText(String.valueOf(b.getBonusGracePeriod()));
         addressField.setText(b.getAddress());
-         **/
+        courierSpeed.setText(Float.toString(b.getCourierSpeed()));
+
         q = null;
     }
 
@@ -97,6 +91,7 @@ public class SettingsController {
         float deliveryBlockRate = Float.parseFloat(deliveryBlockRateField.getText());
         float bonusRate = Float.parseFloat(bonusRateField.getText());
         int bonusGracePeriod = Integer.parseInt(bonusGracePeriodField.getText());
+        float courier = Float.parseFloat(courierSpeed.getText());
         String address = addressField.getText();
         String map = mapField.getText();
 
@@ -105,7 +100,8 @@ public class SettingsController {
                 deliveryBlockRate,
                 deliveryBase,
                 bonusRate,
-                bonusGracePeriod
+                bonusGracePeriod,
+                courier
         );
 
         DatabaseManager.QueryManager q = new DatabaseManager.QueryManager();
