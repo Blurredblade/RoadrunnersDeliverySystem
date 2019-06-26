@@ -5,15 +5,14 @@ import DataManagement.DatabaseManager;
 import Models.Business;
  **/
 //import UI.BusinessReport.BusinessReportUIController;
+import Models.DirectedGraph;
+import Models.Map;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -39,24 +38,30 @@ public class SettingsController {
     //@FXML private BusinessReportUIController customerController;
     @FXML private Tab settingsTab;
     @FXML private SettingsController settingsController;
+    String filePath;
 
     FileChooser fileChooser = new FileChooser();
-    public void handleButton() {
-        // Testing
-        }
 
     public void initialize() {
         // Save Changes
         saveButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                saveChanges();
+                try {
+                    saveChanges();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
         // Select and Open a File
         openFileButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                openFile();
+                try {
+                    openFile();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
@@ -90,13 +95,21 @@ public class SettingsController {
         q = null;**/
     }
 
-    public void saveChanges() {
+    public void saveChanges() throws IOException {
+        Map mapAPI = new Map();
+        mapAPI.setFilePath(filePath);
+
+        /**
         float deliveryBase = Float.parseFloat(deliveryBaseField.getText());
         float deliveryBlockRate = Float.parseFloat(deliveryBlockRateField.getText());
         float bonusRate = Float.parseFloat(bonusRateField.getText());
         int bonusGracePeriod = Integer.parseInt(bonusGracePeriodField.getText());
         String address = addressField.getText();
+        **/
         String map = mapField.getText();
+        Alert a = new Alert(Alert.AlertType.NONE);
+        a.setAlertType(Alert.AlertType.CONFIRMATION);
+        a.show();
 
         /** TESTING
         Business b = new Business(
@@ -113,13 +126,11 @@ public class SettingsController {
          **/
     }
 
-    public void openFile() {
-        System.out.println("/nTEST: Opening File");
+    public void openFile() throws IOException {
+        System.out.println("\nOpening File");
         Stage stage = new Stage();
         File selectedFile = fileChooser.showOpenDialog(stage);
-        mapField.setText(selectedFile.getAbsolutePath());
+        filePath = selectedFile.getPath();
+        mapField.setText(filePath);
     }
-
-    public void logout() { System.out.println("/nTEST: User has logged out"); }
-
 }

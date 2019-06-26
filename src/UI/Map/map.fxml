@@ -19,11 +19,14 @@
         <GridPane layoutX="600.0" layoutY="200.0">
             <Label layoutX="600.0" layoutY="41.0" text="Currently Selected Intersections:" GridPane.rowIndex="0"/>
             <ScrollPane layoutX="600.0" maxWidth="300">
-                <TextArea fx:id="console" layoutX="500.0" layoutY="41.0" maxWidth="300" text="TEST" GridPane.rowIndex="1"/>
+                <TextArea fx:id="console" layoutX="500.0" layoutY="41.0" maxWidth="300" GridPane.rowIndex="1"/>
             </ScrollPane>
+            <Label layoutX="400.0" maxWidth="200" layoutY="41.0" text="Start Intersection" GridPane.rowIndex="2"/>
+            <TextField fx:id="start" maxWidth="200.00" text="5" GridPane.rowIndex="3"/>
+            <Label layoutX="400.0" maxWidth="200" layoutY="41.0" text="Ending Intersection" GridPane.rowIndex="4"/>
+            <TextField fx:id="finish" maxWidth="200.00" text="10" GridPane.rowIndex="5"/>
+            <Button fx:id="Go" mnemonicParsing="false" text="Find Shortest Path" GridPane.rowIndex="6"/>
         </GridPane>
-
-
 
         <!-- There's probably a better way toNode add all of these intersection buttons but optimization is the last thing on mind for now. -->
         <!-- Row 1 Buttons -->

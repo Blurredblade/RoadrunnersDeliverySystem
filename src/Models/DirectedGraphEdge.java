@@ -14,6 +14,6 @@ public class DirectedGraphEdge {
     public int toNode() { return nodeB; }
     public double distance() { return blocks; }
 
-    @Override
+    @Override // Returns Hashmap keys for adjacent Intersections
     public String toString() { return "" + nodeB; }
 }

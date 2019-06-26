@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -74,15 +75,25 @@ public class MapController {
     @FXML private Button b47;
     @FXML private Button b48;
     @FXML private Button b49;
-
     @FXML private TextArea console;
+    @FXML private Button Go;
+    @FXML private TextField start;
+    @FXML private TextField finish;
 
     @FXML
     public void initialize(){
         setMapImage();
 
-        //TEST
-        map.findshortestPath(1, 1); // This needs to be here to initialize the graph/map unfortunately.
+        Go.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) {
+            int begin = Integer.parseInt(start.getText());
+            int stop = Integer.parseInt(finish.getText());
+            System.out.println("begin :" + begin);
+            System.out.println("Stop :" + stop);
+            map.findshortestPath(begin, stop);
+            String test = map.appendText();
+            appendText(test);
+        }
+        });
 
         openIntersectionBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) {
             for (Button button : buttonArray) try {
@@ -90,23 +101,26 @@ public class MapController {
                 String getButton = button.getId();
                 int node = Integer.parseInt(getButton.substring(1));
                 System.out.println("Opening node: " + node);
-                map.openIntersection(node);
                 appendText("\nIntersection " + node + " is marked as Open");
+                map.openIntersection(node);
+                String test = map.appendText();
+
             } catch(NullPointerException nullClosed ) {}
-            //map.printMapToConsole(); //Check to see adjacency list change
             buttonCount = 0;
             System.out.println("green");}
         });
+
         closedIntersectionBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent e) {
             for (Button button : buttonArray) try {
                 button.setStyle("-fx-base: red;");
                 String getButton = button.getId();
                 int node = Integer.parseInt(getButton.substring(1));
                 System.out.println("Closing node: " + node);
-                map.closeIntersection(node);
                 appendText("\nIntersection " + node + " is marked as Closed");
+                map.closeIntersection(node);
+                String test = map.appendText();
+
             } catch(NullPointerException nullClosed ) {}
-            //map.printMapToConsole(); //Check to see adjacency list change
             buttonCount = 0;
             System.out.println("red");}
         });
@@ -261,10 +275,12 @@ public class MapController {
             buttonArray[buttonCount] = b49; buttonCount++; } });
     }
 
+    public void setString(String Text) {
+        appendText(Text);
+    }
     public void appendText(String newText) {
         console.setText(console.getText() + newText);
     }
-
     public void setMapImage() {
         File file = new File("src/UI/Map/Map.png");
         Image image = new Image(file.toURI().toString());

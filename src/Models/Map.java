@@ -1,45 +1,70 @@
 package Models;
 
+import UI.Map.MapController;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Map {
     DirectedGraph graph;
+    @FXML private TextArea console;
+    public String str;
+    public String file;
 
-    public void findshortestPath(int source, int destination) {
+    public void setFilePath(String filepath) { file = filepath; }
 
-        String file = "src/Models/Intersection.csv";
+    // Map API
+    public void findshortestPath(int start, int finish) {
+        String file2 = "src/Models/Intersection.csv";
         try {
-            graph = new DirectedGraph(file);
-            System.out.print("Intersecctions = {Adjacent Intersections}\n");
+            graph = new DirectedGraph(file2); // Test file
+            //graph = new DirectedGraph(file); // Select a file from different location
+            System.out.println("Map file " + file); // Test output
+            System.out.print("Intersections = {Adjacent Intersections}\n");
             System.out.print(graph);
             Dijkstra shortestPath = new Dijkstra(graph);
 
             // Get the results from the shortest path calculation
-            ArrayList<Integer> sourceToDest = shortestPath.Dijkstra(source, destination);
-            ArrayList<Integer> returnTrip = shortestPath.Dijkstra(destination, source);
+            ArrayList<Integer> sourceToDest = shortestPath.Dijkstra(start, finish);
+            ArrayList<Integer> returnTrip = shortestPath.Dijkstra(finish, start);
 
             // Print out result
-            System.out.print("Source to Destination: " + source + " -> " + destination + ": " + sourceToDest + "\n");
-            System.out.print("Return Trip: " + destination + " -> " + source + ": " + returnTrip + "\n");
-            if (sourceToDest.size() == 1) System.out.println("The destination is not reachable.");
+            String rst1 = "\nShortest Path from Source to Destination: \nFrom" + start + " -> " + finish + ": " + sourceToDest + "\n";
+            System.out.print(rst1); setString(rst1);
+            String rst2 = "\nShortest Path from Return Trip: \nFrom" + finish + " -> " + start + ": " + returnTrip + "\n";
+            System.out.print(rst2); setString(rst2);
+            if (sourceToDest.size() == 1) {
+                String rst3 = "\nThe destination is not reachable.";
+                System.out.println(rst3); setString(rst3);
+            }
 
             // **** Total round trip distance calculation
             int howFar = distance(sourceToDest, returnTrip);
-            System.out.println("The distance to destination and back is " + howFar + " blocks.");
+            String rst4 = "\nThe distance to destination and back is " + howFar + " blocks.";
+            System.out.println(rst4); setString(rst4);
 
             // **** Total price calculation
             double cost = price(howFar);
-            System.out.println("The price for the round trip is $" + cost + ".");
+            String rst5 = "\nThe price for the round trip is $" + cost + ".";
+            System.out.println(rst5); setString(rst5);
 
             // **** Estimated Time calculation
             double estTime = estDeliveryTime(sourceToDest.size() - 1);
-            System.out.println("The estimated time to for the delivery is " + estTime + " hours.");
+            String rst6 = "\nThe estimated time to for the delivery is " + estTime + " hours.";
+            System.out.println(rst6); setString(rst6);
 
+
+            setResultString(rst1, rst2, rst4, rst5, rst6);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setResultString(String rst1, String rst2, String rst4, String rst5, String rst6) {
+        str = rst1 + rst2 + rst4 + rst5 + rst6;
     }
 
     // Distance between A and B by blocks
@@ -64,13 +89,27 @@ public class Map {
 
     public void closeIntersection(int node) {
         graph.removeIntersection(node);
-        System.out.println("Removed intersection #" + node);
+        String rst7 = "\nRemoved intersection #" + node;
+        System.out.println(rst7); setString(rst7);
     }
 
     public void openIntersection(int node) {
         graph.openIntersection(node);
-        System.out.println("Opening intersection #" + node);
+        String rst8 = "\nOpening intersection #" + node;
+        System.out.println(rst8); setString(rst8);
     }
-    public void printMapToConsole() { System.out.println(graph); }
+    public void printMapToConsole() {
+        System.out.println(graph);
+        setString("" + graph);
+    }
 
+    @FXML
+    public void setString(String string) {
+        str = string;
+    }
+
+    @FXML
+    public String appendText() {
+        return str;
+    }
 }
